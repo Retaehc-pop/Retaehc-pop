@@ -28,5 +28,10 @@
 <img align="left" alt="Flutter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/flutter.svg" />
 <img align="left" alt="Tensorflow" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/tensorflow.svg" />
 
+<br />
+<br />
+
+[![Retaehc_pop's GitHub stats](https://github-readme-stats.vercel.app/api?username=retaehc_pop)](https://github.com/anuraghazra/github-readme-stats)
+
 [instagram]: https://www.instagram.com/pop.pxp/
 [stackoverflow]: https://stackoverflow.com/users/14537225/papop-lekhapanyaporn
