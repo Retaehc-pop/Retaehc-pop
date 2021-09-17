@@ -31,7 +31,7 @@
 <br />
 <br />
 
-[![Retaehc_pop's GitHub stats](https://github-readme-stats.vercel.app/api?username=retaehc_pop)](https://github.com/retaehc_pop/github-readme-stats)
+[![Retaehc_pop's GitHub stats](https://github-readme-stats.vercel.app/api?username=Retaehc-pop)](https://github.com/Retaehc-pop/github-readme-stats)
 
 [instagram]: https://www.instagram.com/pop.pxp/
 [stackoverflow]: https://stackoverflow.com/users/14537225/papop-lekhapanyaporn
