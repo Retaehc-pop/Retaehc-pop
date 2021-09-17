@@ -31,8 +31,9 @@
 <br />
 <br />
 
-[![Retaehc_pop's GitHub stats](https://github-readme-stats.vercel.app/api?username=Retaehc-pop)](https://github.com/Retaehc-pop/github-readme-stats&show_icons=true&theme=dark)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Retaehc-pop&langs_count=8)](https://github.com/Retaehc-pop/github-readme-stats)
+[![Retaehc_pop's GitHub stats](https://github-readme-stats.vercel.app/api?username=Retaehc-pop)](https://github.com/Retaehc-pop/github-readme-stats&show_icons=true&theme=cobalt)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Retaehc-pop&langs_count=8)](https://github.com/Retaehc-pop/github-readme-stats&layout=compact&theme=cobalt)
 
 [instagram]: https://www.instagram.com/pop.pxp/
 [stackoverflow]: https://stackoverflow.com/users/14537225/papop-lekhapanyaporn
