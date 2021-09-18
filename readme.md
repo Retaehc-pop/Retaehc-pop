@@ -1,6 +1,6 @@
 ### Hello world, I'm Pop - aka Retaehc
 
-## I'm a Student, Developer, Future engineer and Gamer.
+## I'm a Student, Developer, Future software engineer and Gamer.
 
 - I'm currently working on a CanSat Project
 - I would like to learn Machine Learning and AI
