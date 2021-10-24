@@ -1,4 +1,4 @@
-### Hello world, I'm Pop - aka Retaehc
+# Hello world, I'm Pop - aka Retaehc
 
 ## I'm a Student, Developer, Future software engineer and Gamer.
 
