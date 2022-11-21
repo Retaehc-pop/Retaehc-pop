@@ -1,6 +1,20 @@
 <h1 align="center">
   👾 Papop Lekhapanyaporn 👾
 </h1>
+<div id="badge">
+  <a href="your-linkedin-URL">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="your-github-URL">
+    <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
+  </a>
+  <a href="your-github-URL">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+  <a href="your-github-URL">
+    <img src="https://img.shields.io/badge/Instagram-red?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Badge"/>
+  </a>
+</div>
 <div display="flex" flex-direction="row" align="space-between">
   <p>📍Aachen, Germany</P>
   <p>🎓 Computer Science @RWTH Aachen University</p>
