@@ -1,7 +1,7 @@
 <h1 align="center">
   👾 Papop Lekhapanyaporn 👾
 </h1>
-<div align="space-between">
+<div display="flex" flex-direction="row" align="space-between">
   <p>📍Aachen, Germany</P>
   <p>🎓 Computer Science @RWTH Aachen University</p>
 </div>
