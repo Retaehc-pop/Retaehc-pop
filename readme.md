@@ -1,7 +1,7 @@
 <h1 align="center">
   👾 Papop Lekhapanyaporn 👾
 </h1>
-<p align="right"> ** Computer Science @RWTH Aachen University ** </p>
+<p align="right">- ** Computer Science @RWTH Aachen University ** </p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Retaehc-pop&show_icons=true&locale=en&layout=compact&theme=city_lights&hide_border=true" alt="Most Used Languages" />
