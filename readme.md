@@ -18,7 +18,9 @@
   <br/>
   <strong><a href="https://goo.gl/maps/5fuVseabJviv3J3r8">📍Aachen, Germany</a></strong>
   <br/>
-  
+  <a href="https://wakatime.com/@bb7dd285-e21f-43c8-a61d-3249dff0b5bc">
+     <img src="https://wakatime.com/badge/user/bb7dd285-e21f-43c8-a61d-3249dff0b5bc.svg" alt="Total time coded since Aug 22 2022" />
+  </a>
 </div>
 <table>
   <tr>
