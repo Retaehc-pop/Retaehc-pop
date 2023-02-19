@@ -25,8 +25,8 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
             </li>
             <li>
               <Link href=""><Hypertext texts="Home">Home</Hypertext></Link>
-              <Link href="/About"><Hypertext texts="About">About</Hypertext></Link>
-              <Link href=""><Hypertext texts="Project">Project</Hypertext></Link>
+              <Link href="/about"><Hypertext texts="About">About</Hypertext></Link>
+              <Link href="/project"><Hypertext texts="Project">Project</Hypertext></Link>
             </li>
           </ul>
           </nav>
