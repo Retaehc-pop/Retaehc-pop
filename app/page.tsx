@@ -5,7 +5,7 @@ export default function Page(){
   return (
     <>
     <main>
-      <HypertextLoop texts={["Pingping","papop","kiki","AI OODDDDDDDDDDD","GOODLUCK","i dont know what to add"]} delay={3000}>
+      <HypertextLoop texts={["Pi"]} delay={3000}>
         Main Page
       </HypertextLoop>
     </main>

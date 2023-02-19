@@ -3,8 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/favicon.ico";
+import ContactIcons from "../container/contactIcons";
 import { Hypertext } from "../components/hypertext";
 import '../styles/globals.scss';
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export default function RootLayout({ children }:{children:React.ReactNode}) {
   return (
@@ -30,8 +32,12 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
           </nav>
           {children}
         <footer>
-          <p>this is a test footer</p>
-          </footer></body>
+          <ContactIcons />
+          <section className="footer_right">
+            <p>©{new Date().getFullYear()} </p>
+          </section>
+        </footer>
+        </body>
     </html>
   )
 }
