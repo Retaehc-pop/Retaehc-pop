@@ -79,16 +79,15 @@ main{
 footer{
   position: fixed;
   display: flex;
-  // background-color: #434869;
   bottom: 0;
   width: 100%;
   padding: 0rem 2rem;
   justify-content: space-between;
   align-items: center;
-
+  z-index: 0;
   .footer_right{
     display: flex;
-    // background-color: #8790c3;
+    z-index: 2;
     p{
       transform: rotateZ(-90deg);
     }

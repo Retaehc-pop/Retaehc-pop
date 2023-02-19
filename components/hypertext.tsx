@@ -10,7 +10,7 @@ export function Hypertext({
   texts: string;
 }) {
   const [letters, setLetter] = useState<string>(
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:<>?"
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   );
   const [text, setText] = useState<string>(children);
   const [originalText, setOriginalText] = useState<string>(children);
@@ -57,9 +57,15 @@ export function Hypertext({
   }
 
   return (
-    <div
-      onMouseEnter={() => changeTo(texts)}
-      onMouseLeave={() => changeTo(originalText, true)}
+    <div style={{
+      height:"100%",
+      width:"100%",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+    }}
+      onMouseEnter={() => changeTo(texts.toUpperCase())}
+      onMouseLeave={() => changeTo(originalText.toUpperCase(), true)}
     >
       {text}
     </div>

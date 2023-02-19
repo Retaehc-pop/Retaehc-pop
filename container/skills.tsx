@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Arduino from "../public/svg/arduino.svg";
 import C from "../public/svg/c.svg";
 import Cpp from "../public/svg/cplusplus.svg";
@@ -25,61 +24,117 @@ import Rust from "../public/svg/rust.svg";
 import Sass from "../public/svg/sass.svg";
 import Solidity from "../public/svg/solidity.svg";
 import Tensorflow from "../public/svg/tensorflow.svg";
+import Firebase from "../public/svg/firebase.svg";
 import Typescript from "../public/svg/typescript.svg";
-
+import Mongodb from "../public/svg/mongodb.svg";
+import styles from "../container/Skills.module.scss";
+import { Hypertext } from "../components/hypertext";
 
 const Skills = () => {
-  return (
-    <div>
-      <section>
-        <p>Programming Languages</p>
-        <div></div>
-        <Arduino width={150} height={150} />
-        <Css width={150} height={150} />
-        <Numpy width={150} height={150} />
-        <Go width={150} height={150} />
-        <Typescript width={150} height={150} />
-        <Mysql width={150} height={150} />
-        <C width={150} height={150} />
-        <Python width={150} height={150} />
-        <Javascript width={150} height={150} />
-        <Java width={150} height={150} />
-        <Cpp width={150} height={150} />
-        <Gitlab width={150} height={150} />
-        <Html width={150} height={150} />
-        <Jupyter width={150} height={150} />
-        <Tensorflow width={150} height={150} />
-        <Pytorch width={150} height={150} />
-        <Rpi width={150} height={150} />
-        <Nodejs width={150} height={150} />
-        <Pandas width={150} height={150} />
-        <Haskell width={150} height={150} />
-        <Sass width={150} height={150} />
-        <Rust width={150} height={150} />
-        <Github width={150} height={150} />
-        <Nextjs width={150} height={150} />
-        <Solidity width={150} height={150} />
+  const Iconset = ({
+    children,
+    name,
+  }: {
+    children: React.ReactNode;
+    name: string;
+  }) => {
+    return (
+      <div className={styles.iconset}>
+        {children}
+        <span className={styles.text}>
+          <Hypertext texts={name}>{name}</Hypertext>
+        </span>
+      </div>
+    );
+  };
 
-        <p>
-          Python, C++, C, Java, ,TypeS cript, JavaScript, HTML, CSS, Haskell,
-          Prolog,
-        </p>
+  return (
+    <div className={styles.main}>
+      <section className={styles.container}>
+        <Iconset name="Haskell">
+          <Haskell className={styles.icon} />
+        </Iconset>
+        <Iconset name="Python">
+          <Python className={styles.icon} />
+        </Iconset>
+        <Iconset name="Typescript">
+          <Typescript className={styles.icon} />
+        </Iconset>
+        <Iconset name="Javascript">
+          <Javascript className={styles.icon} />
+        </Iconset>
+        <Iconset name="C">
+          <C className={styles.icon} />
+        </Iconset>
+        <Iconset name="C++">
+          <Cpp className={styles.icon} />
+        </Iconset>
+        <Iconset name="Java">
+          <Java className={styles.icon} />
+        </Iconset>
+        <Iconset name="Html">
+          <Html className={styles.icon} />
+        </Iconset>
+        <Iconset name="Css">
+          <Css className={styles.icon} />
+        </Iconset>
+        <Iconset name="Sass">
+          <Sass className={styles.icon} />
+        </Iconset>
+        <div className={styles.iconset}>
+          <Python className={styles.icon} />
+          <span className={styles.text}>
+            <Hypertext texts={"Python"}>Python</Hypertext>
+          </span>
+          {/* <div className={styles.tools}>
+              <Pandas width={150} height={150} />
+              <Numpy width={150} height={150} />
+              <Jupyter width={150} height={150} />
+              <Tensorflow width={150} height={150} />
+              <Pytorch width={150} height={150} />
+            </div> */}
+        </div>
       </section>
-      <section>
-        <p>Frameworks</p>
-        <p>React, Next.js, Node.js, Express.js, Django, Flask</p>
+      <section className={styles.container}>
+        <Iconset name="React">
+          <React className={styles.icon} />
+        </Iconset>
+        <Iconset name="Nextjs">
+          <Nextjs className={styles.icon} />
+        </Iconset>
+        <Iconset name="Nodejs">
+          <Nodejs className={styles.icon} />
+        </Iconset>
       </section>
-      <section>
-        <p>Database</p>
-        <p>MySQL, MongoDB, Firebase</p>
+      <section className={styles.container}>
+        <Iconset name="Mysql">
+          <Mysql className={styles.icon} />
+        </Iconset>
+        <Iconset name="Firebase">
+          <Firebase className={styles.icon} />
+        </Iconset>
+        <Iconset name="Mongodb">
+          <Mongodb className={styles.icon} />
+        </Iconset>
       </section>
-      <section>
-        <p>Tools</p>
-        <p>Git, Github, Gitlab, VS Code, Jira, Trello, Figma</p>
+      <section className={styles.container}>
+        <Iconset name="Github">
+          <Github className={styles.icon} />
+        </Iconset>
+        <Iconset name="Gitlab">
+          <Gitlab className={styles.icon} />
+        </Iconset>
+        <Iconset name="Git">
+          <Git className={styles.icon} />
+        </Iconset>
       </section>
-      <section>
-        <p>Other</p>
-        <p>Arduino, Raspberry Pi, 3D Printing, CAD, FDM, SLA, SLS</p>
+      <section className={styles.container}>
+        <Iconset name="Arduino">
+          <Arduino className={styles.icon} />
+        </Iconset>
+        <Iconset name="Rpi">
+          <Rpi className={styles.icon} />
+        </Iconset>
       </section>
     </div>
   );

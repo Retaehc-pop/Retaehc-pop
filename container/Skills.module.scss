@@ -1,0 +1,49 @@
+.main {
+  .iconset {
+    position: relative;
+    width: 8rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    .icon{
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      scale: 1.5;
+      .icon {
+        opacity: 0;
+      }
+      .text {
+        opacity: 1;
+      }
+    }
+  }
+  svg {
+    width: inherit;
+    height: inheit;
+  }
+}
+.text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: var(--font-monospace);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
