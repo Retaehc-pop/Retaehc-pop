@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { HypertextLoop } from '../components/hypertextloop'
-export default function Page(){
+const Page = () => {
   return (
     <>
     <main>
@@ -12,3 +12,5 @@ export default function Page(){
     </>
   )
 }
+
+export default Page
