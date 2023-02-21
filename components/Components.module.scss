@@ -1,15 +1,16 @@
 .pageBanner{
-  position: absolute;
-  top: 30%;
+  position: fixed;
+  bottom: 10%;
   left: 0%;
-  transform: rotate(-90deg) translateY(-50%);
+  transform: rotate(-90deg);
+  transform-origin: top left;
   font-size: 3rem;
   opacity: 0.2;
+  padding : 1.5rem;
   h1{
     font-family: var(--font-cursive);
     font-weight: 100;
-    // margin: 0;
-    // padding: 0;
+    margin: 0;
     letter-spacing: 2rem;
   }
 }
