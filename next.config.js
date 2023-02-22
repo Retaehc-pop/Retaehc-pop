@@ -15,6 +15,9 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  images:{
+    domains: ['images.ctfassets.net','via.placeholder.com','t4.ftcdn.net']
+  }
 }
 
 module.exports = nextConfig

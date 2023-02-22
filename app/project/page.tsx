@@ -1,28 +1,65 @@
 import Head from "next/head";
+import PageBanner from "../../components/pageBanner";
 import { NextPage } from "next";
-const Project:NextPage = () => {
+import Carousel from "../../components/carousel";
+import { EmblaOptionsType } from "embla-carousel-react";
+import React from "react";
+import styles from "./Project.module.scss"
+import Temp from "../../temp.json"
+
+type Prototype = {
+  year: number;
+  projects: 
+    {
+      name: string;
+      role: string;
+      description: string;
+      image: string;
+      teamSize: number;
+      duration: string;
+      link: string;
+      technology?: string;
+    }[]
+  ;
+};
+const YearProject: React.FC<Prototype> = (props) => {
+  const { year, projects } = props;
+  const pictures = projects.map((project) => {
+    return {
+      name:project.name,
+      image:project.image,
+      link:project.link
+    }
+  });
+  const OPTIONS:EmblaOptionsType = { loop: true, inViewThreshold: 0, dragFree: true };
+  return (
+    <section className={styles.year_section}>
+      <h2>{year}</h2>
+      <Carousel
+        slides={pictures}
+        options={OPTIONS}
+      />
+    </section>
+  );
+};
+
+const Project: NextPage = () => {
+
   return (
     <>
       <Head>
         <title>Page</title>
       </Head>
-      <main>
+      <main className={styles.main}>
+        <PageBanner>Project</PageBanner>
         <section>
-          <h3>Projects</h3>
-          <h6>2020</h6>
-          <p>Passenger 1</p>
-          <h6>2021</h6>
-          <p>Anual Cansat Competition 2021</p>
-          <p>Thailand Cansat Competition 2021</p>
-          <p>ALIEN SAT</p>
-          <p>Food Buster</p>
-          <p>Passenger 2</p>
-          <p>Thai vivat innovation</p>
-          <h6>2022</h6>
-          <p>Microsoft Hackathon 2022</p>
-          <p>Juno V1 SRP Sounding Rocket (Low Altitude)</p>
-          <h6>2023</h6>
-          <p>Work in Progress</p>
+          {
+            Temp.map((year) => {
+              return (
+                <YearProject key={year.year} year={year.year} projects={year.projects} />
+              )
+            })
+          }
         </section>
       </main>
     </>

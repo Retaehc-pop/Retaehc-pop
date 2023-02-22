@@ -31,12 +31,10 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
           </ul>
           </nav>
           {children}
-        {/* <footer> */}
           <ContactIcons />
           <section className="footer_right">
             <p>©{new Date().getFullYear()} </p>
           </section>
-        {/* </footer> */}
         </body>
     </html>
   )

@@ -1,3 +1,10 @@
-main{
-  color:var(--color-background);
+.main{
+  // background-color: rgb(80, 75, 69);
+  margin: 0 10rem;
+}
+
+.name{
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
 }

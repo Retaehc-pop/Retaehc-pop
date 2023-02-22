@@ -3,8 +3,15 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import styles from '../components/Carousel.module.scss'
+import Image from 'next/image'
+import Link from 'next/link'
+
 type PropType = {
-  slides: string[]
+  slides: {
+    name: string;
+    image: string;
+    link: string;
+  }[],
   options?: EmblaOptionsType
 }
 
@@ -30,16 +37,11 @@ const Carousel: React.FC<PropType> = (props) => {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          {slides.map((index) => (
+          {slides.map((slide,index) => (
             <div className={styles.embla__slide} key={index}>
-              {/* <div className="embla__slide__number">
-                <span>{index + 1}</span>
-              </div> */}
-              <img
-                className={styles.embla__slide__img}
-                src={index}
-                alt="Your alt text"
-              />
+              <Link href={slide.link? slide.link: ""} passHref>
+                <Image className={styles.embla__slide__img} src={"/test.jpg"} unoptimized={true} alt="Your alt text" width={300} height={300} />
+              </Link>
             </div>
           ))}
         </div>

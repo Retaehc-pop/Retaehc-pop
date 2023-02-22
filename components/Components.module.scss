@@ -14,3 +14,14 @@
     letter-spacing: 2rem;
   }
 }
+
+.cursor{
+  animation-name: cursor;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-duration: 1060ms;
+
+}
+@keyframes cursor {
+  from { opacity: 1.0; } to { opacity: 0.0; }
+}
