@@ -24,6 +24,7 @@ body::after{
   --color-icon: #686869;
   --color-line: #434869;
   --color-background: #efefef;
+  --color-background-notrans: rgb(239, 239, 239);
   --color-background-secondary: #8790c3;
   --font-monospace: 'Roboto Mono', monospace;
   --font-sans: 'Montserrat', sans-serif;
@@ -85,15 +86,14 @@ footer{
   padding: 0rem 2rem;
   justify-content: space-between;
   align-items: center;
-  z-index: 0; 
 }
 
 .footer_right{
   position: fixed;
   display: flex;
   right:0;
+  bottom: 10%;
   padding: 0rem 2rem;
-  z-index: 2;
   p{
     transform: rotateZ(-90deg);
   }

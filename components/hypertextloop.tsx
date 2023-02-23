@@ -1,17 +1,25 @@
 'use client'
 import { useEffect } from "react"
 import { useState } from "react"
+import React from "react"
 
-export function HypertextLoop({children,texts,delay=3000}:{children:string,texts:string[],delay:number}){
+type Prototype = {
+  texts:string[];
+  delay?:number;
+  repeat?:boolean;
+}
+
+const HypertextLoop:React.FC<Prototype> = (props) =>{
+  const {texts,delay=3000,repeat=false} = props;
   const [letters,setLetter] = useState<string>("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|:<>?")
-  const [text,setText] = useState<string>(children)
+  const [text,setText] = useState<string>(texts[0])
 
   useEffect(()=>{
-    let indexes = 0;
-    const interval = setInterval(()=>{
-      changeTo(texts[indexes%texts.length])
-      indexes+=1;
+    const timeout = setTimeout(()=>{
+      active()
     },delay)
+    return ()=>clearTimeout(timeout)
+
   },[])
 
   function active(){

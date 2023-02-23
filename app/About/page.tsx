@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import styles from "./About.module.scss";
 import PageBanner from "../../components/pageBanner";
 import Skills from "../../container/skills";
+import RollDownText from "../../components/rollDownText";
 const About: NextPage = () => {
   return (
     <>
@@ -17,6 +18,8 @@ const About: NextPage = () => {
         <p>RWTH Aachen University, Aachen Germany</p>
         <p>B.Sc Computer Science</p>
         </section>
+        
+        <RollDownText text={["1","2","3","4","5"]} delay={2000}/>
         <section>
           <h3>Experience</h3>
           <p>2020</p>

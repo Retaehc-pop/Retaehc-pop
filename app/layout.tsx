@@ -24,17 +24,17 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
             <Image src={Logo} alt="icon" width={50} height={50}/>
             </li>
             <li>
-              <Link href=""><Hypertext text="Home"/></Link>
-              <Link href="/about"><Hypertext text="About"/></Link>
-              <Link href="/project"><Hypertext text="Project"/></Link>
+              <Link href=""><Hypertext text="HOME"/></Link>
+              <Link href="/about"><Hypertext text="ABOUT"/></Link>
+              <Link href="/project"><Hypertext text="PROJECT"/></Link>
             </li>
           </ul>
           </nav>
-          {children}
           <ContactIcons />
           <section className="footer_right">
             <p>©{new Date().getFullYear()} </p>
           </section>
+          {children}
         </body>
     </html>
   )
