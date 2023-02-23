@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/favicon.ico";
 import ContactIcons from "../container/contactIcons";
-import { Hypertext } from "../components/hypertext";
+import  Hypertext from "../components/hypertext";
 import '../styles/globals.scss';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -24,9 +24,9 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
             <Image src={Logo} alt="icon" width={50} height={50}/>
             </li>
             <li>
-              <Link href=""><Hypertext texts="Home">Home</Hypertext></Link>
-              <Link href="/about"><Hypertext texts="About">About</Hypertext></Link>
-              <Link href="/project"><Hypertext texts="Project">Project</Hypertext></Link>
+              <Link href=""><Hypertext text="Home"/></Link>
+              <Link href="/about"><Hypertext text="About"/></Link>
+              <Link href="/project"><Hypertext text="Project"/></Link>
             </li>
           </ul>
           </nav>

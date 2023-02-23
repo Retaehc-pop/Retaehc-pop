@@ -5,7 +5,7 @@ import Typing from "../components/typing";
 import PageBanner from "../components/pageBanner";
 import { useChain,animated,useSpring,useSpringRef } from "@react-spring/web";
 import { config } from '@react-spring/web'
-import { Hypertext } from "../components/hypertext";
+import Hypertext from "../components/hypertext";
 
 const Page = () => {
   const typingref = useSpringRef();
@@ -50,13 +50,13 @@ const Page = () => {
       <PageBanner>Home</PageBanner>
       <main className={styles.main}>
         <animated.div style={{...fadeindown}}>
-          <Hypertext texts="Hello, I'm" >Hello, I'm Pop</Hypertext>
+          <Hypertext text="Hello, I'm Pop"/>
         </animated.div>
         <animated.div className={styles.name} style={{...typing}}>
           <Typing context="Papop Lekhapanyaporn" speed={1500} cursor={true} />
         </animated.div>
         <animated.div style={{...fadeinup}}>
-          <Hypertext texts="welcome to my website" >welcome to my website</Hypertext>
+          <Hypertext text="welcome to my website"/>
         </animated.div>
       </main>
     </>

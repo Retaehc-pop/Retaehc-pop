@@ -1,19 +1,20 @@
 "use client";
 import { useEffect } from "react";
 import { useState } from "react";
+import React from "react";
 
-export function Hypertext({
-  children,
-  texts,
-}: {
-  children: string;
-  texts: string;
-}) {
-  const [letters, setLetter] = useState<string>(
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  );
-  const [text, setText] = useState<string>(children);
-  const [originalText, setOriginalText] = useState<string>(children);
+type Prototype = {
+  text: string;
+  delay?: number;
+  duration?: number;
+};
+
+const Hypertext:React.FC<Prototype> = (props) => {
+  const { text, delay, duration } = props;
+
+  const [letters, setLetter] = useState<string>("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  const [currentText, setCurrentText] = useState<string>("");
+  const [originalText, setOriginalText] = useState<string>(text);
 
   function randomLetter() {
     return letters[Math.floor(Math.random() * letters.length)];
@@ -30,10 +31,11 @@ export function Hypertext({
     });
     return result.join("");
   }
+
   function changeLetterRevert(to: string, iteration: number) {
     let result: string[] = [];
     to.split("").forEach((letter, index) => {
-      if (index < to.length-iteration) {
+      if (index < to.length - iteration) {
         result.push(randomLetter());
       } else {
         result.push(to[index]);
@@ -46,28 +48,31 @@ export function Hypertext({
   function changeTo(to: string, revert: boolean = false) {
     let iteration = 0;
     const interval = setInterval(() => {
-      setText(
+      setCurrentText(
         revert ? changeLetterRevert(to, iteration) : changeLetter(to, iteration)
       );
       if (iteration >= to.length) {
         clearInterval(interval);
       }
       iteration += 1;
-    }, 30);
+    }, duration? Math.round(duration/originalText.length):30);
   }
 
   return (
-    <div style={{
-      height:"100%",
-      width:"100%",
-      display:"flex",
-      justifyContent:"center",
-      alignItems:"center",
-    }}
-      onMouseEnter={() => changeTo(texts.toUpperCase())}
+    <div
+      style={{
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onMouseEnter={() => changeTo(originalText.toUpperCase())}
       onMouseLeave={() => changeTo(originalText.toUpperCase(), true)}
     >
-      {text}
+      {currentText}
     </div>
   );
 }
+
+export default Hypertext;
