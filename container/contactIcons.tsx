@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Hypertext } from "../components/hypertext";
+import Hypertext from "../components/hypertext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -20,26 +20,26 @@ const ContactIcons = () => {
       <Link href="https://github.com/Retaehc-pop" passHref>
         <div>
           <FontAwesomeIcon icon={faGithub} className={styles.icon} />
-          <span><Hypertext texts="Github">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Hypertext></span>
+          <span><Hypertext text="Github"/></span>
         </div>
       </Link>
       <Link href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/" passHref>
         <div>
           <FontAwesomeIcon icon={faLinkedin} className={styles.icon} />
-          <span><Hypertext texts="Linkedin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Hypertext></span>
+          <span><Hypertext text="Linkedin"/></span>
         </div>
       </Link>
       <Link href="" passHref>
         <div>
           <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
-          <span><Hypertext texts="Twitter">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Hypertext></span>
+          <span><Hypertext text="Twitter"/></span>
         </div>
       </Link>
 
       <Link href="mailto:papop.lekhapanyaporn@gmail.com" passHref>
         <div>
           <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
-          <span><Hypertext texts="Email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Hypertext></span>
+          <span><Hypertext text="Email"/></span>
         </div>
       </Link>
     </div>

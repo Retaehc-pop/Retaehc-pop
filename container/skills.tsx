@@ -28,7 +28,7 @@ import Firebase from "../public/svg/firebase.svg";
 import Typescript from "../public/svg/typescript.svg";
 import Mongodb from "../public/svg/mongodb.svg";
 import styles from "../container/Skills.module.scss";
-import { Hypertext } from "../components/hypertext";
+import Hypertext from "../components/hypertext";
 
 const Skills = () => {
   const Iconset = ({
@@ -42,7 +42,7 @@ const Skills = () => {
       <div className={styles.iconset}>
         {children}
         <span className={styles.text}>
-          <Hypertext texts={name}>{name}</Hypertext>
+          <Hypertext text={name}/>
         </span>
       </div>
     );
@@ -81,19 +81,19 @@ const Skills = () => {
         <Iconset name="Sass">
           <Sass className={styles.icon} />
         </Iconset>
-        <div className={styles.iconset}>
+        {/* <div className={styles.iconset}>
           <Python className={styles.icon} />
           <span className={styles.text}>
             <Hypertext texts={"Python"}>Python</Hypertext>
           </span>
-          {/* <div className={styles.tools}>
+          <div className={styles.tools}>
               <Pandas width={150} height={150} />
               <Numpy width={150} height={150} />
               <Jupyter width={150} height={150} />
               <Tensorflow width={150} height={150} />
               <Pytorch width={150} height={150} />
-            </div> */}
-        </div>
+            </div>
+        </div> */}
       </section>
       <section className={styles.container}>
         <Iconset name="React">

@@ -13,7 +13,7 @@ const Hypertext:React.FC<Prototype> = (props) => {
   const { text, delay, duration } = props;
 
   const [letters, setLetter] = useState<string>("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-  const [currentText, setCurrentText] = useState<string>("");
+  const [currentText, setCurrentText] = useState<string>(text);
   const [originalText, setOriginalText] = useState<string>(text);
 
   function randomLetter() {
