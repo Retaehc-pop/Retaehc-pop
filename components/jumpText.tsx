@@ -3,7 +3,7 @@ import React from "react";
 import { useSpring, useSpringRef, animated } from "@react-spring/web";
 import { config } from "@react-spring/web";
 import { useState } from "react";
-import styles from "./Components.module.scss";
+import styles from "../styles/Components.module.scss";
 
 type Prototype = {
   text: string;

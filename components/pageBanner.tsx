@@ -1,5 +1,5 @@
 "use client"
-import styles from "../components/Components.module.scss";
+import styles from "../styles/Components.module.scss";
 import { useEffect, useState } from "react";
 const PageBanner = ({ children }: { children: string }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });

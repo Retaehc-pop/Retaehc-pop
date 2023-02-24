@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import styles from '../components/Carousel.module.scss'
+import styles from '../styles/Carousel.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
