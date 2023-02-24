@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { NextPage } from "next";
 import styles from "./About.module.scss";
 import PageBanner from "../../components/pageBanner";
@@ -6,9 +5,6 @@ import Skills from "../../container/skills";
 const About: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Page</title>
-      </Head>
       <main>
         <PageBanner>About</PageBanner>
         <section>

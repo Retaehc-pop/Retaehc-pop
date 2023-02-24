@@ -1,4 +1,4 @@
-import Head from "next/head";
+
 import PageBanner from "../../components/pageBanner";
 import { NextPage } from "next";
 import Carousel from "../../components/carousel";
@@ -47,9 +47,6 @@ const Project: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Page</title>
-      </Head>
       <main className={styles.main}>
         <PageBanner>Project</PageBanner>
         <section>
