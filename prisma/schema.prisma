@@ -9,3 +9,33 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Project {
+  id           Int          @id @default(autoincrement())
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  published    Boolean      @default(false)
+  name         String
+  description  String
+  image        String
+  url          String
+  duration     String
+  technologies Technology[]
+  teamSize     Int
+  role         String
+  year         Year         @relation(fields: [yearId], references: [id])
+  yearId       Int
+  authorId     Int
+}
+
+model Year {
+  id      Int       @id @default(autoincrement())
+  year    Int
+  project Project[]
+}
+
+model Technology {
+  id      Int       @id @default(autoincrement())
+  name    String
+  project Project[]
+}
