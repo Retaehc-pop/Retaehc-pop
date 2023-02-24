@@ -1,0 +1,12 @@
+.main {
+}
+
+.pic {
+  $size: 40;
+  position: relative;
+  aspect-ratio: 1.681/1;
+  width: calc($size *1rem);
+  border-image: radial-gradient(circle, rgba(222,222,226,1) 0%, rgba(194,194,194,1) 50%, rgba(239,239,239,1) 100%) calc($size * 0.1);
+  border-width: calc($size *0.01rem);
+  border-style: solid;
+}
