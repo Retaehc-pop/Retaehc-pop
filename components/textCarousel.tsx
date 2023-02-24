@@ -1,12 +1,14 @@
 "use client";
 import React, { ReactElement, useCallback, useEffect, useState } from "react";
 import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
-import styles from "../components/Carousel.module.scss";
-import Image from "next/image";
-import Link from "next/link";
-
+import styles from "../styles/Carousel.module.scss";
+import { PrevButton, NextButton, DotButton } from "./Button";
 type PropType = {
-  slides: ReactElement[];
+  slides: {
+    title: string;
+    secondTitle?: string;
+    description: string[];
+  }[];
   options?: EmblaOptionsType;
 };
 
@@ -49,20 +51,36 @@ const TextCarousel: React.FC<PropType> = (props) => {
   return (
     <>
       <div className={styles.embla}>
-        <div className={styles.embla__viewport} ref={emblaRef}>
-          <div className={styles.embla__container}></div>
+        <div className={styles.viewport} ref={emblaRef}>
+          <div className={styles.container}>
+            {slides.map((slide, index) => (
+              <div className={styles.slide} key={index}>
+                <div className={styles.slide__text}>
+                  <h2 className={styles.slide__title}>{slide.title}</h2>
+                  <h3 className={styles.slide__secondTitle}>
+                    {slide.secondTitle}
+                  </h3>
+                  <div className={styles.slide__description}>
+                    {slide.description.map((text, index) => (
+                      <p key={index}>{text}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
-      </div>
-      <div className="embla__dots">
-        {/* {scrollSnaps.map((_, index) => (
+        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
+      <div className={styles.dots}>
+        {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
             selected={index === selectedIndex}
             onClick={() => scrollTo(index)}
           />
-        ))} */}
+        ))}
+      </div>
       </div>
     </>
   );

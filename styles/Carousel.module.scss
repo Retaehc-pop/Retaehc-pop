@@ -1,55 +1,133 @@
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%; // image per slide
-  --slide-height: 19rem;
   padding: 1rem;
-}
-.embla__viewport {
-  overflow: hidden;
-}
-.embla__container {
-  display: flex;
-  flex-direction: row;
-  height: auto;
-  margin-left: calc(var(--slide-spacing) * -1);
-}
-.embla__slide {
-  flex: 0 0 var(--slide-size);
-  min-width: 0;
-  padding-left: var(--slide-spacing);
   position: relative;
+  .viewport {
+    overflow: hidden;
+    .container {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      margin-left: calc(var(--slide-spacing) * -1);
+      .slide {
+        flex: 0 0 var(--slide-size);
+        min-width: 0;
+        padding-left: var(--slide-spacing);
+        position: relative;
+        .slide__img {
+          display: block;
+          width: 100%;
+          object-fit: cover;
+        }
+        .slide__text {
+          display: block;
+          // padding: 0 5rem;
+        }
+      }
+    }
+  }
+
+  .progress {
+    z-index: 1;
+    background-color: var(--color-background);
+    position: absolute;
+    height: 0.3rem;
+    border-radius: 0.2rem;
+    left: 0;
+    right: 0;
+    bottom: 2.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+    width: 21rem;
+    max-width: 90%;
+    overflow: hidden;
+    .progress__bar {
+      background-image: linear-gradient(
+        45deg,
+        var(--color-background-secondary),
+        var(--color-background-tritary)
+      );
+      position: absolute;
+      width: 100%;
+
+      top: 0;
+      bottom: 0;
+      left: -100%;
+    }
+  }
 }
-.embla__slide__img {
-  display: block;
-  height: var(--slide-height);
-  width: 100%;
-  object-fit: cover;
-}
-.embla__progress {
+
+.dots {
   z-index: 1;
-  background-color: var(--background-site);
+  bottom: 1.2rem;
   position: absolute;
-  height: 0.3rem;
-  border-radius: 0.2rem;
   left: 0;
   right: 0;
-  bottom: 2.6rem;
-  margin-left: auto;
-  margin-right: auto;
-  pointer-events: none;
-  width: 21rem;
-  max-width: 90%;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.embla__progress__bar {
-  background-image: linear-gradient(
+
+.dot,.dot_selected,
+.button {
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.dot,.dot_selected {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  &::after {
+    background: var(--color-background);
+    border-radius: 0.2rem;
+    width: 100%;
+    height: 0.3rem;
+    content: "";
+  }
+}
+
+.dot_selected::after {
+  background: linear-gradient(
     45deg,
-    var(--brand-primary),
-    var(--brand-secondary)
+    var(--color-background-secondary),
+    var(--color-background-tritary)
   );
+}
+.button {
+  z-index: 1;
+  color: var(--color-background);
   position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: -100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+.buttonPrev {
+  left: 1.6rem;
+}
+.buttonNext {
+  right: 1.6rem;
+}
+.buttonSVG {
+  width: 65%;
+  height: 65%;
 }
