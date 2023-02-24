@@ -30,6 +30,17 @@
   }
 }
 
+.jumpText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:1rem;
+  div{
+    cursor: context-menu;
+    padding: 0 0.5rem;
+  }
+}
+
 .rollDownText{
   display: flex;
   align-items: center;

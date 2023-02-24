@@ -6,8 +6,7 @@ import PageBanner from "../components/pageBanner";
 import { useChain, animated, useSpring, useSpringRef } from "@react-spring/web";
 import { config } from "@react-spring/web";
 import Hypertext from "../components/hypertext";
-import RollDownText from "../components/rollDownText";
-
+import JumpText from "../components/jumpText";
 const Page = () => {
   const typingref = useSpringRef();
   const fadeinref = useSpringRef();
@@ -35,12 +34,12 @@ const Page = () => {
   });
   const fadeindown = useSpring({
     ref: fadeinref,
-    config: config.gentle,
+    config: config.stiff,
     from: { opacity: 0, transform: "translateY(-200px)" },
     to: { opacity: 1, transform: "translateY(0px)" },
   });
 
-  useChain(play ? [typingref, fadeinref, backgroundref] : [], [0, speed/1000, 2]);
+  useChain(play ? [typingref, fadeinref, backgroundref] : [], [0, speed/1000, 1.5]);
   useEffect(() => {
     setPlay(true);
   }, []);
@@ -52,7 +51,7 @@ const Page = () => {
       </animated.div>
       <main className={styles.main}>
         <animated.div className={styles.banner} style={{ ...fadeindown }}>
-          <Hypertext text="👾 HI! I'M POP 👾" />
+          <JumpText text=" HI! I'M POP " />
         </animated.div>
         <animated.div className={styles.name} style={{ ...typing }}>
           <Typing context="Papop Lekhapanyaporn" speed={speed} cursor={true} />

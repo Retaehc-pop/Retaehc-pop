@@ -68,7 +68,7 @@ const Hypertext:React.FC<Prototype> = (props) => {
         alignItems: "center",
       }}
       onMouseEnter={() => changeTo(originalText.toUpperCase())}
-      onMouseLeave={() => changeTo(originalText.toUpperCase(), true)}
+      // onMouseLeave={() => changeTo(originalText.toUpperCase(), true)}
     >
       {currentText}
     </div>
