@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import styles from "./About.module.scss";
 import PageBanner from "../../components/pageBanner";
 import Skills from "../../container/skills";
+import TextCarousel from "../../components/textCarousel";
 import Image from "next/image";
 const About: NextPage = () => {
   return (
@@ -13,6 +14,16 @@ const About: NextPage = () => {
         </div>
         <section>
           <h3>Education</h3>
+          <TextCarousel slides={[{
+            title: "Assumption College",
+            secondTitle: "Science-Engineering",
+            description: ['2015-2022','GPAX: 3.8']
+            },{
+              title: "RWTH Aachen University",
+            secondTitle: "B.Sc Computer Science",
+            description: ['2015-Present','']
+            }
+            ]}/>
           <div>
             <p>2015-2022</p>
             <p>Assumption College, Bangkok Thailand</p>
