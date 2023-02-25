@@ -70,8 +70,8 @@ const TextCarousel: React.FC<PropType> = (props) => {
             ))}
           </div>
         </div>
-        {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
+        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
       <div className={styles.dots}>
         {scrollSnaps.map((_, index) => (
           <DotButton

@@ -27,117 +27,180 @@ import Tensorflow from "../public/svg/tensorflow.svg";
 import Firebase from "../public/svg/firebase.svg";
 import Typescript from "../public/svg/typescript.svg";
 import Mongodb from "../public/svg/mongodb.svg";
-import styles from "../container/Skills.module.scss";
-import Hypertext from "../components/hypertext";
 
-const Skills = () => {
-  const Iconset = ({
-    children,
-    name,
-  }: {
-    children: React.ReactNode;
-    name: string;
-  }) => {
-    return (
-      <div className={styles.iconset}>
-        {children}
-        <span className={styles.text}>
-          <Hypertext text={name}/>
-        </span>
-      </div>
-    );
-  };
-
-  return (
-    <div className={styles.main}>
-      <section className={styles.container}>
-        <Iconset name="Haskell">
-          <Haskell className={styles.icon} />
-        </Iconset>
-        <Iconset name="Python">
-          <Python className={styles.icon} />
-        </Iconset>
-        <Iconset name="Typescript">
-          <Typescript className={styles.icon} />
-        </Iconset>
-        <Iconset name="Javascript">
-          <Javascript className={styles.icon} />
-        </Iconset>
-        <Iconset name="C">
-          <C className={styles.icon} />
-        </Iconset>
-        <Iconset name="C++">
-          <Cpp className={styles.icon} />
-        </Iconset>
-        <Iconset name="Java">
-          <Java className={styles.icon} />
-        </Iconset>
-        <Iconset name="Html">
-          <Html className={styles.icon} />
-        </Iconset>
-        <Iconset name="Css">
-          <Css className={styles.icon} />
-        </Iconset>
-        <Iconset name="Sass">
-          <Sass className={styles.icon} />
-        </Iconset>
-        {/* <div className={styles.iconset}>
-          <Python className={styles.icon} />
-          <span className={styles.text}>
-            <Hypertext texts={"Python"}>Python</Hypertext>
-          </span>
-          <div className={styles.tools}>
-              <Pandas width={150} height={150} />
-              <Numpy width={150} height={150} />
-              <Jupyter width={150} height={150} />
-              <Tensorflow width={150} height={150} />
-              <Pytorch width={150} height={150} />
-            </div>
-        </div> */}
-      </section>
-      <section className={styles.container}>
-        <Iconset name="React">
-          <React className={styles.icon} />
-        </Iconset>
-        <Iconset name="Nextjs">
-          <Nextjs className={styles.icon} />
-        </Iconset>
-        <Iconset name="Nodejs">
-          <Nodejs className={styles.icon} />
-        </Iconset>
-      </section>
-      <section className={styles.container}>
-        <Iconset name="Mysql">
-          <Mysql className={styles.icon} />
-        </Iconset>
-        <Iconset name="Firebase">
-          <Firebase className={styles.icon} />
-        </Iconset>
-        <Iconset name="Mongodb">
-          <Mongodb className={styles.icon} />
-        </Iconset>
-      </section>
-      <section className={styles.container}>
-        <Iconset name="Github">
-          <Github className={styles.icon} />
-        </Iconset>
-        <Iconset name="Gitlab">
-          <Gitlab className={styles.icon} />
-        </Iconset>
-        <Iconset name="Git">
-          <Git className={styles.icon} />
-        </Iconset>
-      </section>
-      <section className={styles.container}>
-        <Iconset name="Arduino">
-          <Arduino className={styles.icon} />
-        </Iconset>
-        <Iconset name="Rpi">
-          <Rpi className={styles.icon} />
-        </Iconset>
-      </section>
-    </div>
-  );
-};
-
-export default Skills;
+export default [
+  {
+    name: "Haskell",
+    icon: <Haskell />,
+    experties: 3,
+    pos: { x: '1rem', y: '1rem' },
+  },
+  {
+    name: "Python",
+    icon: <Python />,
+    experties: 5,
+    pos: { x: '2rem', y: '-3rem' },
+  },
+  {
+    name: "Typescript",
+    icon: <Typescript />,
+    experties: 5,
+    pos: { x: '-6rem', y: '-4rem' },
+  },
+  {
+    name: "Javascript",
+    icon: <Javascript />,
+    experties: 5,
+    pos: { x: '-4rem', y: '-2rem' },
+  },
+  {
+    name: "C",
+    icon: <C />,
+    experties: 3,
+    pos: { x: '-4rem', y: '2rem' },
+  },
+  {
+    name: "C++",
+    icon: <Cpp />,
+    experties: 3,
+    pos: { x: '4rem', y: '2rem' },
+  },
+  {
+    name: "Rust",
+    icon: <Rust />,
+    experties: 1,
+    pos: { x: '5rem', y: '-1rem' },
+  },
+  {
+    name: "Go",
+    icon: <Go />,
+    experties: 1,
+    pos: { x: '-2rem', y: '-1rem' },
+  },
+  {
+    name: "Java",
+    icon: <Java />,
+    experties: 3,
+    pos: { x: '-2rem', y: '-4rem' },
+  },
+  {
+    name: "Html",
+    icon: <Html />,
+    experties: 5,
+    pos: { x: '-2rem', y: '4rem' },
+  },
+  {
+    name: "Css",
+    icon: <Css />,
+    experties: 3,
+    pos: { x: '0rem', y: '4rem' },
+  },
+  {
+    name: "Sass",
+    icon: <Sass />,
+    experties: 5,
+    pos: { x: '0rem', y: '-4rem' },
+  },
+  {
+    name: "React",
+    icon: <React />,
+    experties: 3,
+    pos: { x: '2rem', y: '4rem' },
+  },
+  {
+    name: "Nextjs",
+    icon: <Nextjs />,
+    experties: 5,
+    pos: { x: '4rem', y: '4rem' },
+  },
+  {
+    name: "Nodejs",
+    icon: <Nodejs />,
+    experties: 3,
+    pos: { x: '6rem', y: '4rem' },
+  },
+  {
+    name: "Git",
+    icon: <Git />,
+    experties: 2,
+    pos: { x: '8rem', y: '4rem' },
+  },
+  {
+    name: "Github",
+    icon: <Github />,
+    experties: 3,
+    pos: { x: '8rem', y: '2rem' },
+  },
+  {
+    name: "Gitlab",
+    icon: <Gitlab />,
+    experties: 0,
+    pos: { x: '8rem', y: '0rem' },
+  },
+  {
+    name: "Arduino",
+    icon: <Arduino />,
+    experties: 4,
+    pos: { x: '8rem', y: '-4rem' },
+  },
+  {
+    name: "Raspberry Pi",
+    icon: <Rpi />,
+    experties: 4,
+    pos: { x: '8rem', y: '-2rem' },
+  },
+  {
+    name: "Solidity",
+    icon: <Solidity />,
+    experties: 1,
+    pos: { x: '-4rem', y: '-4rem' },
+  },
+  {
+    name: "Tensorflow",
+    icon: <Tensorflow />,
+    experties: 4,
+    pos: { x: '-4rem', y: '4rem' },
+  },
+  {
+    name: "Pytorch",
+    icon: <Pytorch />,
+    experties: 2,
+    pos: { x: '-10rem', y: '5rem' },
+  },
+  // {
+  //   name: "Numpy",
+  //   icon: <Numpy />,
+  //   experties: 3,
+  //   pos: { x: '-6rem', y: '2rem' },
+  // },
+  // {
+  //   name: "Pandas",
+  //   icon: <Pandas />,
+  //   experties: 3,
+  //   pos: { x: '-8rem', y: '2rem' },
+  // },
+  {
+    name: "Jupyter",
+    icon: <Jupyter />,
+    experties: 4,
+    pos: { x: '-8rem', y: '4rem' },
+  },
+  {
+    name: "Mysql",
+    icon: <Mysql />,
+    experties: 3,
+    pos: { x: '-8rem', y: '0rem' },
+  },
+  {
+    name: "Mongodb",
+    icon: <Mongodb />,
+    experties: 1,
+    pos: { x: '-6rem', y: '0rem' },
+  },
+  {
+    name: "Firebase",
+    icon: <Firebase />,
+    experties: 2,
+    pos: { x: '-6rem', y: '-2rem' },
+  },
+];
