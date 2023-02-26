@@ -9,6 +9,7 @@
   padding: 1.5rem;
   z-index: 10;
   h1 {
+    z-index: 10;
     font-family: var(--font-cursive);
     font-weight: 100;
     margin: 0;
@@ -41,6 +42,7 @@
     padding: 0 0.5rem;
   }
 }
+
 
 .rollDownText{
   display: flex;

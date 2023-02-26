@@ -27,7 +27,7 @@ const Typing: React.FC<Prototype> = (props) => {
     return () => {
       clearInterval(interval);
     };
-  });
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div style={{ padding: "0 1rem", textAlign: "left" }}>

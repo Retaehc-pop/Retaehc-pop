@@ -4,38 +4,32 @@ import { useSpring, animated } from "@react-spring/web";
 import { config } from "@react-spring/web";
 import { useState } from "react";
 import styles from "../styles/Components.module.scss";
-
+import { useEffect } from "react";
 type Prototype = {
   text: string;
 };
 
 const JumpText: React.FC<Prototype> = (props) => {
   const { text } = props;
+  const [sine, setSine] = useState(0);
 
-  const [hoveredIndex, setHoveredIndex] = useState(-1)
-  const springProps = useSpring({
-    transform: "translateY(-50px)" ,
-    scale: 1.5,
-    config: config.gentle,
-  })
+  useEffect(() => {
+    let iteration = 0;
+    const interval = setInterval(() => {
+      setSine(Math.sin(iteration)-1);
+      iteration += 0.05;
+    }, 10);
+    return () => clearInterval(interval);
+  }, []);
 
-  const items = text.split("").map((str, index) => {
-    if (str === " ") return <div key={index}>&nbsp;</div>
-    const isHovered = hoveredIndex === index
+  const { transform } = useSpring({
+    transform: `translateY(${sine *1}rem)`,
+    config: config.wobbly,
+  });
 
-    return (
-      <animated.div
-        key={index}
-        onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(-1)}
-        style={isHovered ? {...springProps}:{}}
-      >
-        {str}
-      </animated.div>
-    )
-  })
-
-  return <div className={styles.jumpText}>{items}</div>
+  return (
+  <animated.div className={styles.jumpText} style={{transform}}>{text}</animated.div>
+  );
 };
 
 export default JumpText;

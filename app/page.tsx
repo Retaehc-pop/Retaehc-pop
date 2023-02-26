@@ -50,13 +50,15 @@ const Page = () => {
         <PageBanner>Home</PageBanner>
       </animated.div>
       <main className={styles.main}>
-        <animated.div className={styles.banner} style={{ ...fadeindown }}>
-          <JumpText text=" HI! I'M POP " />
+        <animated.div className={styles.bannertop} style={{ ...fadeindown }}>
+          <JumpText text="👾" />
+          <div> HI! I'M POP</div>
+          <JumpText text="👾" />
         </animated.div>
         <animated.div className={styles.name} style={{ ...typing }}>
           <Typing context="Papop Lekhapanyaporn" speed={speed} cursor={true} />
         </animated.div>
-        <animated.div className={styles.banner} style={{ ...fadeinup }}>
+        <animated.div className={styles.bannertop} style={{ ...fadeinup }}>
           <Hypertext text="WELCOME TO MY WEBSITE" />
         </animated.div>
       </main>
