@@ -20,7 +20,7 @@ const HypertextLoop:React.FC<Prototype> = (props) =>{
     },delay)
     return ()=>clearTimeout(timeout)
 
-  },[])
+  })
 
   function active(){
     let indexes = 0;

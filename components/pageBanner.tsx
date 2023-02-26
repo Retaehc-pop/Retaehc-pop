@@ -12,7 +12,7 @@ const PageBanner = ({ children }: { children: string }) => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  });
 
   return (
     <div className={styles.pageBanner}>

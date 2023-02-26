@@ -1,15 +1,22 @@
 #base image
-FROM node:16.15.1
+FROM node:16.15.1-alpine
 
-# set working directory
-WORKDIR /app
+RUN mkdir -p /usr/src/app
+ENV PORT 3000
 
-COPY . .
+WORKDIR /usr/src/app
 
-# install and cache app dependencies
-RUN yarn install --frozen-lockfile --production
+COPY package.json /usr/src/app
+COPY yarn.lock /usr/src/app
 
-# start app
-CMD ["yarn", "build"]
+# Production use node instead of root
+ENV YARN_CACHE_FOLDER=/dev/shm/yarn_cache
+# USER node
+RUN yarn install --production
 
-CMD ['yarn', 'start']
+COPY . /usr/src/app
+
+RUN yarn build
+
+EXPOSE 3000
+CMD [ "yarn", "start" ]

@@ -27,7 +27,7 @@ const Typing: React.FC<Prototype> = (props) => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  });
 
   return (
     <div style={{ padding: "0 1rem", textAlign: "left" }}>
