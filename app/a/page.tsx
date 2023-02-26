@@ -17,7 +17,7 @@ import {
 } from "@react-spring/web";
 import Hypertext from "../../components/hypertext";
 
-const About: NextPage = () => {
+const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const leftRef = useSpringRef();
   const upRightRef = useSpringRef();
