@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma": "dotenv -e .env.local prisma"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
@@ -27,11 +28,13 @@
     "react-dom": "^18.2.0",
     "sass": "^1.56.1",
     "scss": "^0.2.4",
+    "sharp": "^0.31.3",
     "typescript": "4.9.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "@types/styled-components": "^5.1.26",
+    "dotenv-cli": "^7.0.0",
     "prisma": "^4.10.1"
   }
 }

@@ -169,7 +169,7 @@ const About = () => {
                 {
                   title: "Technical Lead",
                   secondTitle: "SPACE AC Institute of technology",
-                  description: ["2015-2022", "GPAX: 3.8"],
+                  description: ["2020-2022"],
                 },
               ]}
             />

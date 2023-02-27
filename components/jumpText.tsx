@@ -17,13 +17,13 @@ const JumpText: React.FC<Prototype> = (props) => {
     let iteration = 0;
     const interval = setInterval(() => {
       setSine(Math.sin(iteration)-1);
-      iteration += 0.05;
-    }, 10);
+      iteration += 0.2;
+    }, 100);
     return () => clearInterval(interval);
   }, []);
 
   const { transform } = useSpring({
-    transform: `translateY(${sine *1}rem)`,
+    transform: `translateY(${sine *0.8}rem)`,
     config: config.wobbly,
   });
 
