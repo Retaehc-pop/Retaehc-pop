@@ -16,7 +16,7 @@ const nextConfig = {
     appDir: true,
   },
   images:{
-    domains: ['images.ctfassets.net','via.placeholder.com','t4.ftcdn.net']
+    domains: ['via.placeholder.com']
   }
 }
 
