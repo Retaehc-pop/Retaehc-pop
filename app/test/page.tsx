@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import styles from "./test.module.scss";
-import Haskell from "../../public/svg/Haskell.svg";
+import Haskell from "../../public/svg/haskell.svg";
 import Image from "next/image";
-
+import Icon from "../../components/Icon";
 
 const Page: NextPage = () => {
   const k1 = {
@@ -22,15 +22,7 @@ const Page: NextPage = () => {
   return (
     <main className={styles.main}>
       <Haskell />
-      <Image src={k2.svg} alt={k2.name} height={200} width={200} priority/>
-      <img src="/svg/python.svg" alt={k2.name} />
-      {/* <Image
-            src="/profile.jpg"
-            alt="profile picture of Papop"
-            fill
-            priority
-            style={{ objectFit: "cover" }}
-          /> */}
+      <Icon name="Python"/>
     </main>
   );
 };
