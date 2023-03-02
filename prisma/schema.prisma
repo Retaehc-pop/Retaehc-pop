@@ -12,17 +12,16 @@ model Project {
   createdAt    DateTime     @default(now())
   updatedAt    DateTime     @updatedAt
   published    Boolean      @default(false)
-  name         String
-  description  String
-  image        String
-  url          String
-  duration     String
+  name         String       @unique
+  description  String       @default("")
+  image        String       @default("")
+  url          String       @default("")
+  duration     String       @default("0 Months")
   technologies Technology[]
-  teamSize     Int
+  teamSize     Int          @default(1)
   role         String
   year         Year         @relation(fields: [yearId], references: [id])
   yearId       Int
-  authorId     Int
 }
 
 model Year {
@@ -32,7 +31,17 @@ model Year {
 }
 
 model Technology {
-  id      Int       @id @default(autoincrement())
-  name    String
-  project Project[]
+  id         Int       @id @default(autoincrement())
+  name       String    @unique
+  experties  Int       @default(0)
+  position   Position?
+  project    Project[]
+}
+
+model Position {
+  id           Int        @id @default(autoincrement())
+  x            Int        @default(0)
+  y            Int        @default(0) 
+  Technology   Technology @relation(fields: [technologyId], references: [id])
+  technologyId Int        @unique
 }
