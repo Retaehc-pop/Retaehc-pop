@@ -1,9 +1,6 @@
 "use client";
-
-import { NextPage } from "next";
 import styles from "./About.module.scss";
 import PageBanner from "../../components/pageBanner";
-import skill from "../../container/skills";
 import TextCarousel from "../../components/textCarousel";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -16,16 +13,24 @@ import {
   animated,
 } from "@react-spring/web";
 import Hypertext from "../../components/hypertext";
+import { technologyWithPosition } from "../../lib/prisma";
+import Icon from "../../components/Icon";
+
+async function getSkills() {
+  const res = await fetch("../api/skill");
+  return await res.json();
+}
 
 const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [skill, setSkill] = useState<technologyWithPosition[]>([]);
+  const [sine, setSine] = useState(0);
+  const [openSkill, setOpenSkill] = useState(false);
+  const [open, setOpen] = useState(false);
   const leftRef = useSpringRef();
   const upRightRef = useSpringRef();
   const downRightRef = useSpringRef();
   const downRef = useSpringRef();
-  const [sine, setSine] = useState(0);
-  const [openSkill, setOpenSkill] = useState(false);
-  const [open, setOpen] = useState(false);
 
   const left = useSpring({
     ref: leftRef,
@@ -92,6 +97,7 @@ const About = () => {
   );
 
   useEffect(() => {
+    setOpen(true);
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({
         x: window.innerWidth - e.clientX * 1.2,
@@ -105,10 +111,6 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    setOpen(true);
-  }, []);
-
-  useEffect(() => {
     let iteration = 0;
     const interval = setInterval(() => {
       setSine(Math.sin(iteration));
@@ -117,8 +119,12 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    getSkills().then((res) => {setSkill(res);console.log(res)});
+  }, []);
+
   return (
-    <>
+    <div>
       <PageBanner>{openSkill ? "Skill" : "About"}</PageBanner>
       <main className={styles.main}>
         <animated.div
@@ -194,12 +200,13 @@ const About = () => {
                 className={styles.icons}
                 style={{
                   ...styling,
-                  transform: `translate(${item.pos.x},${item.pos.y})`,
+                  top: item.position? item.position.y+"%" : 0,
+                  left: item.position? item.position.x+"%" : 0,
                   scale: item.experties,
                 }}
               >
                 <div className={styles.icon}>
-                  {item.icon}
+                  <Icon name={item.name} />
                 </div>
                 <div className={styles.text}>
                   <Hypertext text={item.name.toUpperCase()} />
@@ -209,7 +216,7 @@ const About = () => {
           )}
         </animated.div>
       </main>
-    </>
+    </div>
   );
 };
 export default About;

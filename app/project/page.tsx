@@ -1,62 +1,73 @@
-
+"use client";
 import PageBanner from "../../components/pageBanner";
 import { NextPage } from "next";
 import Carousel from "../../components/carousel";
 import { EmblaOptionsType } from "embla-carousel-react";
 import React from "react";
-import styles from "./Project.module.scss"
-import Temp from "../../temp.json"
+import styles from "./Project.module.scss";
+import Temp from "../../temp.json";
+import { yearWithProjectpic } from "../../lib/prisma";
+import { useState, useEffect } from "react";
 
-type Prototype = {
-  year: number;
-  projects: 
-    {
-      name: string;
-      role: string;
-      description: string;
-      image: string;
-      teamSize: number;
-      duration: string;
-      link: string;
-      technology?: string;
-    }[]
-  ;
+async function getProjects() {
+  const res = await fetch("../api/year");
+  return await res.json();
+}
+type PropType = {
+  year: string;
+  project: {
+    name: string;
+    image: string;
+  }[];
 };
-const YearProject: React.FC<Prototype> = (props) => {
-  const { year, projects } = props;
-  const pictures = projects.map((project) => {
+
+const YearProject: React.FC<PropType> = (props) => {
+  const { year, project } = props;
+
+  const pictures = project.map((p) => {
     return {
-      name:project.name,
-      image:project.image,
-      link:project.link
-    }
+      name: p.name,
+      image: p.image,
+      link: `/project/${p.name}`,
+    };
   });
-  const OPTIONS:EmblaOptionsType = { loop: true, inViewThreshold: 0, dragFree: true };
+
+  const OPTIONS: EmblaOptionsType = {
+    loop: true,
+    inViewThreshold: 0,
+    dragFree: true,
+  };
+
   return (
     <section className={styles.year_section}>
       <h2>{year}</h2>
-      <Carousel
-        slides={pictures}
-        options={OPTIONS}
-      />
+      <Carousel slides={pictures} options={OPTIONS} />
     </section>
   );
 };
 
-const Project: NextPage = () => {
+const Project = () => {
+  const [years, setYears] = useState<yearWithProjectpic[]>([]);
 
+  useEffect(() => {
+    getProjects().then((years) => {
+      setYears(years);
+    });
+  }, []);
   return (
     <>
+      <PageBanner>Project</PageBanner>
       <main className={styles.main}>
-        <PageBanner>Project</PageBanner>
         <section>
-          {
-            Temp.map((year) => {
-              return (
-                <YearProject key={year.year} year={year.year} projects={year.projects} />
-              )
-            })
-          }
+          {years.map((year) => {
+            return (
+              <YearProject
+                key={year.id}
+                year={year.year.toString()}
+                project={year.project}
+              />
+            );
+          })}
         </section>
       </main>
     </>

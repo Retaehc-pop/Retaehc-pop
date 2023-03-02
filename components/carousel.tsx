@@ -43,9 +43,9 @@ const Carousel: React.FC<PropType> = (props) => {
                 <Link href={slide.link ? slide.link : ""} passHref>
                   <Image
                     className={styles.slide__img}
-                    src={"/test.jpg"}
+                    src={slide.image ? slide.image:"/test.jpg"}
                     unoptimized={true}
-                    alt="Your alt text"
+                    alt={slide.name}
                     width={300}
                     height={300}
                   />
