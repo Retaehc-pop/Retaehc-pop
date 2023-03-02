@@ -30,9 +30,11 @@ import Solidity from '../public/svg/solidity.svg';
 import Tensorflow from '../public/svg/tensorflow.svg';
 import Typescript from '../public/svg/typescript.svg';
 import Vercel from '../public/svg/vercel.svg';
-
+import Prolog from '../public/svg/prolog.svg';
+import Anaconda from '../public/svg/anaconda.svg';
 export {
   Arduino,
+  Anaconda,
   C,
   Cpp,
   Css,
@@ -50,6 +52,7 @@ export {
   Mysql,
   Npm,
   Postgresql,
+  Prolog,
   Nextjs,
   Nodejs,
   Numpy,

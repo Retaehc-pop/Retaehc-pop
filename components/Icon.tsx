@@ -12,7 +12,7 @@ const Icon: react.FC<IconProps> = (props) => {
       return <icons.Javascript />;
     case "c":
       return <icons.C />;
-    case "c++":
+    case "cpluslus":
       return <icons.Cpp />;
     case "rust":
       return <icons.Rust />;
@@ -27,7 +27,7 @@ const Icon: react.FC<IconProps> = (props) => {
     case "sass":
       return <icons.Sass />;
     case "npm":
-      return <icons.Sass />;
+      return <icons.Npm />;
     case "react":
       return <icons.React />;
     case "nextjs":
@@ -40,7 +40,7 @@ const Icon: react.FC<IconProps> = (props) => {
       return <icons.Python />;
     case "pandas":
       return <icons.Pandas />;
-    case "Pytorch":
+    case "pytorch":
       return <icons.Pytorch />;
     case "tensorflow":
       return <icons.Tensorflow />;
@@ -68,12 +68,16 @@ const Icon: react.FC<IconProps> = (props) => {
       return <icons.Firebase />;
     case "arduino":
       return <icons.Arduino />;
-    case "rpi":
+    case "raspberrypi":
       return <icons.Rpi />;
     case "vercel":
       return <icons.Vercel />;
-    case "Haskell":
+    case "haskell":
       return <icons.Haskell />;
+    case "prolog":
+      return <icons.Prolog />;
+    case 'anaconda':
+      return <icons.Anaconda />;
     default:
       return <div />;
   }
