@@ -73,7 +73,7 @@
         "duration": "6 months"
       },
       {
-        "name": "Safetybelt",
+        "name": "Innosafe",
         "role": "Developer",
         "image": "/test.jpg",
         "link": "https://www.google.com",
@@ -84,7 +84,7 @@
       },{
         "name": "JUNO V1 SRP Sounding Rocket (Low Altitude)",
         "role": "Software Engineer",
-        "description": "This is a description of project 3",
+        "description": "Sorbital Sounding Rocket Project. This project is a rocket that can reach 1km altitude.",
         "image": "/test.jpg",
         "link": "",
         "technologies": "Arduino, C++",
