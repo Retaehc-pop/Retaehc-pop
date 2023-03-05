@@ -1,7 +1,6 @@
 "use client";
 import styles from "./About.module.scss";
-import PageBanner from "../../components/pageBanner";
-import TextCarousel from "../../components/textCarousel";
+import TextCarousel from "../components/textCarousel";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
@@ -12,9 +11,9 @@ import {
   useTransition,
   animated,
 } from "@react-spring/web";
-import Hypertext from "../../components/hypertext";
-import { technologyWithPosition } from "../../lib/prisma";
-import Icon from "../../components/Icon";
+import Hypertext from "../components/hypertext";
+import { technologyWithPosition } from "../lib/prisma";
+import Icon from "../components/Icon";
 
 async function getSkills() {
   const res = await fetch("../api/skill");
@@ -120,103 +119,99 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    getSkills().then((res) => {setSkill(res);console.log(res)});
+    getSkills().then((res) => {
+      setSkill(res);
+      console.log(res);
+    });
   }, []);
 
   return (
-    <div>
-      <PageBanner>{openSkill ? "Skill" : "About"}</PageBanner>
-      <main className={styles.main}>
-        <animated.div
-          className={styles.pic}
-          style={{
-            ...left,
-            transform: `translate(${mousePos.x / 100}px,${
-              mousePos.y / 100
-            }px) `,
-          }}
-        >
-          <Image
-            src="/profile.jpg"
-            alt="profile picture of Papop"
-            fill
-            priority
-            style={{ objectFit: "cover" }}
+    <main className={styles.main}>
+      <animated.div
+        className={styles.pic}
+        style={{
+          ...left,
+          transform: `translate(${mousePos.x / 100}px,${mousePos.y / 100}px) `,
+        }}
+      >
+        <Image
+          src="/profile.jpg"
+          alt="profile picture of Papop"
+          fill
+          priority
+          style={{ objectFit: "cover" }}
+        />
+      </animated.div>
+      <div
+        style={{
+          transform: `translate(${mousePos.x / 150}px,${mousePos.y / 150}px) `,
+        }}
+      >
+        <animated.section style={{ ...downRight }}>
+          <h3>Education</h3>
+          <TextCarousel
+            slides={[
+              {
+                title: "RWTH Aachen University",
+                secondTitle: "B.Sc Computer Science",
+                description: ["2022-Present", ""],
+              },
+              {
+                title: "Assumption College",
+                secondTitle: "Science-Engineering",
+                description: ["2015-2022", "GPAX: 3.8"],
+              },
+            ]}
           />
-        </animated.div>
-        <div
-          style={{
-            transform: `translate(${mousePos.x / 150}px,${
-              mousePos.y / 150
-            }px) `,
-          }}
-        >
-          <animated.section style={{ ...downRight }}>
-            <h3>Education</h3>
-            <TextCarousel
-              slides={[
-                {
-                  title: "RWTH Aachen University",
-                  secondTitle: "B.Sc Computer Science",
-                  description: ["2022-Present", ""],
-                },
-                {
-                  title: "Assumption College",
-                  secondTitle: "Science-Engineering",
-                  description: ["2015-2022", "GPAX: 3.8"],
-                },
-              ]}
-            />
-          </animated.section>
-          <animated.section style={{ ...upRight }}>
-            <h3>Experience</h3>
-            <TextCarousel
-              slides={[
-                {
-                  title: "Technical Lead",
-                  secondTitle: "SPACE AC Institute of technology",
-                  description: ["2020-2022"],
-                },
-              ]}
-            />
-          </animated.section>
-        </div>
-        <animated.div
-          className={styles.skill_button}
-          onClick={() => setOpenSkill(!openSkill)}
-          style={{
-            ...down,
-            ...skillElevate,
-            width: size,
-            height: size,
-            scale: openSkill ? "1" : `${1 + Math.abs(sine) / 10}`,
-          }}
-        >
-          {!openSkill ? (
-            <h3>{`<Skill/>`}</h3>
-          ) : (
-            skillOpen((styling, item) => (
-              <animated.div
-                className={styles.icons}
-                style={{
-                  ...styling,
-                  top: item.position? item.position.y+"%" : 0,
-                  left: item.position? item.position.x+"%" : 0,
-                  scale: item.experties,
-                }}
-              >
-                <div className={styles.icon}>
-                  <Icon name={item.name} />
-                </div>
-                <div className={styles.text}>
-                  <Hypertext text={item.name.toUpperCase()} />
-                </div>
-              </animated.div>
-            ))
-          )}
-        </animated.div>
-      </main>
-    </div>
+        </animated.section>
+        <animated.section style={{ ...upRight }}>
+          <h3>Experience</h3>
+          <TextCarousel
+            slides={[
+              {
+                title: "Technical Lead",
+                secondTitle: "SPACE AC Institute of technology",
+                description: ["2020-2022"],
+              },
+            ]}
+          />
+        </animated.section>
+      </div>
+      <animated.div
+        className={styles.skill_button}
+        onClick={() => setOpenSkill(!openSkill)}
+        style={{
+          ...down,
+          ...skillElevate,
+          width: size,
+          height: size,
+          scale: openSkill ? "1" : `${1 + Math.abs(sine) / 10}`,
+        }}
+      >
+        {!openSkill ? (
+          <h3>{`<Skill/>`}</h3>
+        ) : (
+          skillOpen((styling, item) => (
+            <animated.div
+              className={styles.icons}
+              style={{
+                ...styling,
+                top: item.position ? item.position.y + "%" : "50%",
+                left: item.position ? item.position.x + "%" : "50%",
+                scale: item.experties,
+              }}
+            >
+              <div className={styles.icon}>
+                <Icon name={item.name} />
+              </div>
+              <div className={styles.text}>
+                <Hypertext text={item.name.toUpperCase()} />
+              </div>
+            </animated.div>
+          ))
+        )}
+      </animated.div>
+    </main>
   );
 };
 export default About;

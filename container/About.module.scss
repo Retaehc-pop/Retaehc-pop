@@ -1,11 +1,9 @@
 .main {
   position: relative;
-  margin: 0 5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 90%;
   height: 100%;
 }
 
@@ -24,11 +22,8 @@
   position: absolute;
   cursor: pointer;
   border-radius: 2rem;
-  // min-width: 5rem;
-  // min-height: 2rem;
   display: grid;
   place-items: center;
-  // padding: 25px;
   h3{
     margin: 0;
   }

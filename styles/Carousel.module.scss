@@ -18,15 +18,13 @@
         .slide__img {
           display: block;
           width: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
         .slide__text {
           display: flex;
           flex-direction: column;
           justify-content: center;
           padding-left: 3rem;
-          // align-items: center;
-          // align-content:left;
         }
       }
     }

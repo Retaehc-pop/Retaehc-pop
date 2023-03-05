@@ -24,15 +24,6 @@ export type technologyWithPosition = Prisma.TechnologyGetPayload<{
   };
 }>;
 
-export type yearWithProjectpic = Prisma.YearGetPayload<{
-  include: {
-    project:{
-      select:{
-        name:true,
-        image:true,
-      }
-    }
-  }
-}>;
+export type yearWithProjectpic = Prisma.ProjectGetPayload<{}>;
 
 export { prisma };

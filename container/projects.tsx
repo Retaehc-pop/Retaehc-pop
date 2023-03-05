@@ -1,12 +1,9 @@
 "use client";
-import PageBanner from "../../components/pageBanner";
-import { NextPage } from "next";
-import Carousel from "../../components/carousel";
+import PageBanner from "../components/pageBanner";
+import Carousel from "../components/carousel";
 import { EmblaOptionsType } from "embla-carousel-react";
 import React from "react";
-import styles from "./Project.module.scss";
-import Temp from "../../temp.json";
-import { yearWithProjectpic } from "../../lib/prisma";
+import styles from "./Projects.module.scss";
 import { Project } from "@prisma/client";
 import { useState, useEffect } from "react";
 
@@ -52,7 +49,7 @@ const YearProject = ({ year }: { year: number }) => {
   );
 };
 
-const Project = () => {
+const Projects = () => {
   const years = [2020, 2021, 2022, 2023];
   return (
     <>
@@ -67,4 +64,4 @@ const Project = () => {
     </>
   );
 };
-export default Project;
+export default Projects;

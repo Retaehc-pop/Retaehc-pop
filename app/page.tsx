@@ -1,68 +1,25 @@
-"use client";
-import { useEffect, useState } from "react";
-import styles from "./Home.module.scss";
-import Typing from "../components/typing";
+import styles from "./Page.module.scss";
 import PageBanner from "../components/pageBanner";
-import { useChain, animated, useSpring, useSpringRef } from "@react-spring/web";
-import { config } from "@react-spring/web";
-import Hypertext from "../components/hypertext";
-import JumpText from "../components/jumpText";
+import {
+  useChain,
+  animated,
+  useSpring,
+  useSpringRef,
+  config,
+} from "@react-spring/web";
+import Home from "../container/home";
+import About from "../container/about";
+import Projects from "../container/projects";
 const Page = () => {
-  const typingref = useSpringRef();
-  const fadeinref = useSpringRef();
-  const backgroundref = useSpringRef();
-  const [play, setPlay] = useState<boolean>(false);
-  const speed = 1000;
-  const typing = useSpring({
-    ref: typingref,
-    config: config.gentle,
-    from: { scale: 1.5},
-    delay: speed,
-    to: { scale: 1},
-  });
-  const background = useSpring({
-    ref: backgroundref,
-    config: config.gentle,
-    from: { opacity: 0},
-    to: { opacity: 1},
-  });
-  const fadeinup = useSpring({
-    ref: fadeinref,
-    config: config.gentle,
-    from: { opacity: 0, transform: "translateY(200px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
-  });
-  const fadeindown = useSpring({
-    ref: fadeinref,
-    config: config.stiff,
-    from: { opacity: 0, transform: "translateY(-200px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
-  });
-
-  useChain(play ? [typingref, fadeinref, backgroundref] : [], [0, speed/1000, 1.5]);
-  useEffect(() => {
-    setPlay(true);
-  }, []);
-
   return (
-    <>
-      <animated.div style={{ ...background }}>
-        <PageBanner>Home</PageBanner>
-      </animated.div>
-      <main className={styles.main}>
-        <animated.div className={styles.bannertop} style={{ ...fadeindown }}>
-          <JumpText text="👾" />
-          <div> HI! I'M POP</div>
-          <JumpText text="👾" />
-        </animated.div>
-        <animated.div className={styles.name} style={{ ...typing }}>
-          <Typing context="Papop Lekhapanyaporn" speed={speed} cursor={true} />
-        </animated.div>
-        <animated.div className={styles.bannertop} style={{ ...fadeinup }}>
-          <Hypertext text="WELCOME TO MY WEBSITE" />
-        </animated.div>
-      </main>
-    </>
+    <div>
+      <PageBanner>Papop</PageBanner>
+      {/* <main className={styles.main}> */}
+        <Home />
+        <About />
+        <Projects />
+      {/* </main> */}
+    </div>
   );
 };
 
