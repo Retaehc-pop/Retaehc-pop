@@ -1,24 +1,28 @@
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%; // image per slide
-  padding: 1rem;
+  padding: 1%;
+  aspect-ratio: 32/9;
   position: relative;
   .viewport {
     overflow: hidden;
+    height: 100%;
     .container {
       display: flex;
       flex-direction: row;
-      height: auto;
+      height: 100%;
       margin-left: calc(var(--slide-spacing) * -1);
       .slide {
         flex: 0 0 var(--slide-size);
         min-width: 0;
         padding-left: var(--slide-spacing);
         position: relative;
+        height: 100%;
         .slide__img {
           display: block;
           width: 100%;
-          object-fit: contain;
+          height: 100%;
+          object-fit: cover;
         }
         .slide__text {
           display: flex;
@@ -38,11 +42,11 @@
     border-radius: 0.2rem;
     left: 0;
     right: 0;
-    bottom: 2.6rem;
+    bottom: 10%;
     margin-left: auto;
     margin-right: auto;
     pointer-events: none;
-    width: 21rem;
+    width: 25%;
     max-width: 90%;
     overflow: hidden;
     .progress__bar {

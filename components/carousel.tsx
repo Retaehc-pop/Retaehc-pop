@@ -54,26 +54,17 @@ const Carousel: React.FC<PropType> = (props) => {
             ))
           ) : (
             <div className={styles.slide}>
-              <Image
-                className={styles.slide__img}
-                src={"/test.jpg"}
-                unoptimized={true}
-                alt="Your alt text"
-                width={300}
-                height={300}
-              />
+              <h1> Stay tuned ! </h1>
             </div>
           )}
         </div>
       </div>
-      {slides.length > 0 ? (
         <div className={styles.progress}>
           <div
             className={styles.progress__bar}
             style={{ transform: `translateX(${scrollProgress}%)` }}
           />
         </div>
-      ) : null}
     </div>
   );
 };

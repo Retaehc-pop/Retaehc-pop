@@ -121,7 +121,6 @@ const About = () => {
   useEffect(() => {
     getSkills().then((res) => {
       setSkill(res);
-      console.log(res);
     });
   }, []);
 

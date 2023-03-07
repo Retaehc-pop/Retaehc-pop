@@ -10,6 +10,9 @@ import {
 import Home from "../container/home";
 import About from "../container/about";
 import Projects from "../container/projects";
+import ProjectGrid from "../container/projectsalt";
+
+
 const Page = () => {
   return (
     <div>
@@ -18,6 +21,7 @@ const Page = () => {
         <Home />
         <About />
         <Projects />
+        {/* <ProjectGrid /> */}
       {/* </main> */}
     </div>
   );

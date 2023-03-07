@@ -12,6 +12,7 @@ model Project {
   createdAt    DateTime     @default(now())
   updatedAt    DateTime     @updatedAt
   published    Boolean      @default(false)
+  hilight      Boolean      @default(false)
   name         String       @unique
   description  String       @default("")
   image        String       @default("")
@@ -21,7 +22,7 @@ model Project {
   technologies Technology[]
   teamSize     Int          @default(1)
   role         String
-  year         Int
+  year         String
 }
 
 model Technology {
@@ -40,7 +41,7 @@ model Position {
   technologyId Int        @unique
 }
 
-enum Type{
+enum Type {
   Competition
   Personal
   Research

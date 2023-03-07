@@ -1,40 +1,24 @@
 "use client";
-import PageBanner from "../components/pageBanner";
 import Carousel from "../components/carousel";
 import { EmblaOptionsType } from "embla-carousel-react";
 import React from "react";
 import styles from "./Projects.module.scss";
 import { Project } from "@prisma/client";
 import { useState, useEffect } from "react";
+import { type } from "os";
 
-async function getProjects(year: number) {
-  const res = await fetch(`../api/year?year=${year}`);
+async function getProjects() {
+  const res = await fetch(`../api/projects?hilight=true`);
   const data = await res.json();
   return data;
 }
 
-type YearProjectType = {
-  year: number;
-  project: Project[];
+type slideObj = {
+  name: string;
+  image: string;
+  link: string;
 };
-
-const YearProject = ({ year }: { year: number }) => {
-  const [picture, setPicture] = useState<{ name: string; link: string; image: string }[]>();
-
-  useEffect(() => {
-    getProjects(year).then((projects) => {
-      setPicture(
-        projects.map((p:any) => {
-          return {
-            name: p.name,
-            image: p.image,
-            link: `/project/${p.name}`,
-          };
-        })
-      );
-    });
-  }, []);
-
+const Project = ({ project }: { project: slideObj[] }) => {
   const OPTIONS: EmblaOptionsType = {
     loop: true,
     inViewThreshold: 0,
@@ -43,25 +27,33 @@ const YearProject = ({ year }: { year: number }) => {
 
   return (
     <section className={styles.year_section}>
-      <h2>{year}</h2>
-      <Carousel slides={picture? picture:[]} options={OPTIONS} />
+      <Carousel slides={project ? project : []} options={OPTIONS} />
     </section>
   );
 };
 
 const Projects = () => {
-  const years = [2020, 2021, 2022, 2023];
+  const [projects, setProjects] = useState<slideObj[]>();
+
+  useEffect(() => {
+    getProjects().then((data) => {
+      setProjects(
+        data.map((project: Project) => {
+          return {
+            name: project.name,
+            image: project.image,
+            link: project.name,
+          };
+        })
+      );
+    });
+    console.log("done")
+  }, []);
+
   return (
-    <>
-      <PageBanner>Project</PageBanner>
-      <main className={styles.main}>
-        <section>
-          {years.map((year) => {
-            return <YearProject year={year} />;
-          })}
-        </section>
-      </main>
-    </>
+    <main className={styles.main}>
+      {projects ? <Project project={projects} /> : <h1> Loading... </h1>}
+    </main>
   );
 };
 export default Projects;
