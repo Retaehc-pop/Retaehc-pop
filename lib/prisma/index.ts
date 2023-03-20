@@ -1,10 +1,8 @@
 import { PrismaClient, Prisma } from "@prisma/client";
 
-
 declare global {
   var prisma: PrismaClient;
 }
-
 
 let prisma: PrismaClient;
 //check if we are running in production mode
@@ -24,6 +22,15 @@ export type technologyWithPosition = Prisma.TechnologyGetPayload<{
   };
 }>;
 
-export type yearWithProjectpic = Prisma.ProjectGetPayload<{}>;
+export type projectWithInfo = Prisma.ProjectGetPayload<{
+  include: {
+    tags: true;
+    technologies: {
+      select: {
+        name: true;
+      }
+    };
+  };
+}>;
 
 export { prisma };

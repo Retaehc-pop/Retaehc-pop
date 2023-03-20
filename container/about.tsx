@@ -10,11 +10,11 @@ import {
   useSpringRef,
   useTransition,
   animated,
+  useInView
 } from "@react-spring/web";
 import Hypertext from "../components/hypertext";
 import { technologyWithPosition } from "../lib/prisma";
 import Icon from "../components/Icon";
-import { useInView } from "react-intersection-observer";
 
 async function getSkills() {
   const res = await fetch("../api/skill");
@@ -22,9 +22,6 @@ async function getSkills() {
 }
 
 const About = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [skill, setSkill] = useState<technologyWithPosition[]>([]);
@@ -60,19 +57,14 @@ const About = () => {
       scale: 2,
       opacity: 0,
     },
-    to: inView? {
+    to:{
       transform: "translateY(0%)",
       scale: 5,
       opacity: 1,
-    }:{
-      transform: "translateY(100%)",
-      scale: 2,
-      opacity: 0,
     },
     config: config.gentle,
   });
-  useChain(
-    inView ? [leftRef, upRightRef, downRightRef, downRef] : [],
+  useChain([leftRef, upRightRef, downRightRef, downRef],
     [0, 0.5, 0.5, 0.7]
   );
 
@@ -139,12 +131,8 @@ const About = () => {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
-
   return (
-    <main className={styles.main} ref={ref}>
+    <main className={styles.main}>
       <animated.div
         className={styles.pic}
         style={{

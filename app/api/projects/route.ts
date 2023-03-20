@@ -6,6 +6,14 @@ export async function GET(request: NextRequest) {
 
   try{
     const res = await prisma.project.findMany({
+      include:{
+        tags: true,
+        technologies: {
+          select: { 
+            name: true
+          }
+        },
+      },
       where: {
         published: true,
         hilight: hilight? Boolean(hilight):false,

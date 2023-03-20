@@ -15,14 +15,13 @@ model Project {
   hilight      Boolean      @default(false)
   name         String       @unique
   description  String       @default("")
-  image        String       @default("")
-  url          String       @default("")
-  duration     String       @default("0 Months")
-  type         Type         @default(Personal)
+  image        String?      
+  url          String?      
+  source       String?      
+  tags         Tag[]       
   technologies Technology[]
-  teamSize     Int          @default(1)
   role         String
-  year         String
+  date         DateTime    @default(now())
 }
 
 model Technology {
@@ -41,8 +40,9 @@ model Position {
   technologyId Int        @unique
 }
 
-enum Type {
-  Competition
-  Personal
-  Research
+
+model Tag{
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  project   Project[]
 }

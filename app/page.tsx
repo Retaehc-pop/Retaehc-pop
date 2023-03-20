@@ -1,13 +1,6 @@
 'use client'
 import styles from "./Page.module.scss";
 import PageBanner from "../components/pageBanner";
-import {
-  useChain,
-  animated,
-  useSpring,
-  useSpringRef,
-  config,
-} from "@react-spring/web";
 import Home from "../container/home";
 import About from "../container/about";
 import Projects from "../container/projects";
@@ -22,7 +15,8 @@ const Page = () => {
       <PageBanner>Papop</PageBanner>
         <Home />
         <About />
-        <Projects />
+        {/* <Projects /> */}
+        <ProjectGrid />
     </div>
   );
 };
