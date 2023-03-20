@@ -1,3 +1,4 @@
+'use client'
 import styles from "./Page.module.scss";
 import PageBanner from "../components/pageBanner";
 import {
@@ -13,16 +14,15 @@ import Projects from "../container/projects";
 import ProjectGrid from "../container/projectsalt";
 
 
+
+
 const Page = () => {
   return (
     <div>
       <PageBanner>Papop</PageBanner>
-      {/* <main className={styles.main}> */}
         <Home />
         <About />
         <Projects />
-        {/* <ProjectGrid /> */}
-      {/* </main> */}
     </div>
   );
 };

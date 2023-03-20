@@ -14,6 +14,7 @@ import {
 import Hypertext from "../components/hypertext";
 import { technologyWithPosition } from "../lib/prisma";
 import Icon from "../components/Icon";
+import { useInView } from "react-intersection-observer";
 
 async function getSkills() {
   const res = await fetch("../api/skill");
@@ -21,11 +22,14 @@ async function getSkills() {
 }
 
 const About = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [skill, setSkill] = useState<technologyWithPosition[]>([]);
   const [sine, setSine] = useState(0);
   const [openSkill, setOpenSkill] = useState(false);
-  const [open, setOpen] = useState(false);
   const leftRef = useSpringRef();
   const upRightRef = useSpringRef();
   const downRightRef = useSpringRef();
@@ -51,12 +55,24 @@ const About = () => {
   });
   const down = useSpring({
     ref: downRef,
-    from: { transform: "translateY(100%)", scale: 2, opacity: 0 },
-    to: { transform: "translateY(0%)", scale: 1, opacity: 1 },
+    from: {
+      transform: "translateY(100%)",
+      scale: 2,
+      opacity: 0,
+    },
+    to: inView? {
+      transform: "translateY(0%)",
+      scale: 5,
+      opacity: 1,
+    }:{
+      transform: "translateY(100%)",
+      scale: 2,
+      opacity: 0,
+    },
     config: config.gentle,
   });
   useChain(
-    open ? [leftRef, upRightRef, downRightRef, downRef] : [],
+    inView ? [leftRef, upRightRef, downRightRef, downRef] : [],
     [0, 0.5, 0.5, 0.7]
   );
 
@@ -91,12 +107,11 @@ const About = () => {
     openSkill
       ? [skillElevateRef, skillOpenRef]
       : [skillOpenRef, skillElevateRef],
-    [0.1, open ? 0.3 : 0.6],
+    [0.1, openSkill ? 0.3 : 0.6],
     100
   );
 
   useEffect(() => {
-    setOpen(true);
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({
         x: window.innerWidth - e.clientX * 1.2,
@@ -124,8 +139,12 @@ const About = () => {
     });
   }, []);
 
+  useEffect(() => {
+    console.log(inView);
+  }, [inView]);
+
   return (
-    <main className={styles.main}>
+    <main className={styles.main} ref={ref}>
       <animated.div
         className={styles.pic}
         style={{

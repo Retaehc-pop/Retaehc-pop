@@ -47,7 +47,6 @@ const Projects = () => {
         })
       );
     });
-    console.log("done")
   }, []);
 
   return (

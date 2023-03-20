@@ -6,7 +6,15 @@ import { useChain, animated, useSpring, useSpringRef } from "@react-spring/web";
 import { config } from "@react-spring/web";
 import Hypertext from "../components/hypertext";
 import JumpText from "../components/jumpText";
+import { useInView } from "react-intersection-observer";
+
+
 const Home = () => {
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
   const typingref = useSpringRef();
   const fadeinref = useSpringRef();
   const [play, setPlay] = useState<boolean>(false);
@@ -31,13 +39,10 @@ const Home = () => {
     to: { opacity: 1, transform: "translateY(0px)" },
   });
 
-  useChain(play ? [typingref, fadeinref] : [], [0, speed / 1000]);
-  useEffect(() => {
-    setPlay(true);
-  }, []);
+  useChain(inView ? [typingref, fadeinref] : [typingref,fadeinref], [0, speed / 1000]);
 
   return (
-    <main>
+    <main ref={ref}>
       <animated.div className={styles.bannertop} style={{ ...fadeindown }}>
         <JumpText text="👾" />
         <div> HI! I'M POP</div>
