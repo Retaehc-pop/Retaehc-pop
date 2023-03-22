@@ -2,7 +2,6 @@ import { prisma } from "../../../lib/prisma";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
-  const hilight = request.nextUrl.searchParams.get('hilight');
 
   try{
     const res = await prisma.project.findMany({
@@ -16,7 +15,6 @@ export async function GET(request: NextRequest) {
       },
       where: {
         published: true,
-        hilight: hilight? Boolean(hilight):false,
       },
     });
     const data = await JSON.stringify(res);

@@ -8,23 +8,15 @@ import {
   config,
   useChain,
   useSpringRef,
-  useTransition,
   animated,
-  useInView
 } from "@react-spring/web";
 import Hypertext from "../components/hypertext";
-import { technologyWithPosition } from "../lib/prisma";
 import Icon from "../components/Icon";
 
-async function getSkills() {
-  const res = await fetch("../api/skill");
-  return await res.json();
-}
 
 const About = () => {
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [skill, setSkill] = useState<technologyWithPosition[]>([]);
   const [sine, setSine] = useState(0);
   const [openSkill, setOpenSkill] = useState(false);
   const leftRef = useSpringRef();
@@ -67,42 +59,6 @@ const About = () => {
   useChain([leftRef, upRightRef, downRightRef, downRef],
     [0, 0.5, 0.5, 0.7]
   );
-
-  const skillElevateRef = useSpringRef();
-  const skillOpenRef = useSpringRef();
-
-  const { size, ...skillElevate } = useSpring({
-    ref: skillElevateRef,
-    from: {
-      size: "5%",
-      background: "hotpink",
-      transform: "translateY(40vh)",
-    },
-    to: {
-      size: openSkill ? "100%" : "10%",
-      background: openSkill ? "white" : "var(--color-background)",
-      transform: openSkill ? "translateY(0vh)" : "translateY(40vh)",
-    },
-    config: config.stiff,
-  });
-
-  const skillOpen = useTransition(openSkill ? skill : [], {
-    ref: skillOpenRef,
-    trail: 400 / skill.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-    config: config.gentle,
-  });
-
-  useChain(
-    openSkill
-      ? [skillElevateRef, skillOpenRef]
-      : [skillOpenRef, skillElevateRef],
-    [0.1, openSkill ? 0.3 : 0.6],
-    100
-  );
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({
@@ -125,11 +81,6 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    getSkills().then((res) => {
-      setSkill(res);
-    });
-  }, []);
 
   return (
     <main className={styles.main}>
@@ -183,40 +134,6 @@ const About = () => {
           />
         </animated.section>
       </div>
-      <animated.div
-        className={styles.skill_button}
-        onClick={() => setOpenSkill(!openSkill)}
-        style={{
-          ...down,
-          ...skillElevate,
-          width: size,
-          height: size,
-          scale: openSkill ? "1" : `${1 + Math.abs(sine) / 10}`,
-        }}
-      >
-        {!openSkill ? (
-          <h3>{`<Skill/>`}</h3>
-        ) : (
-          skillOpen((styling, item) => (
-            <animated.div
-              className={styles.icons}
-              style={{
-                ...styling,
-                top: item.position ? item.position.y + "%" : "50%",
-                left: item.position ? item.position.x + "%" : "50%",
-                scale: item.experties,
-              }}
-            >
-              <div className={styles.icon}>
-                <Icon name={item.name} />
-              </div>
-              <div className={styles.text}>
-                <Hypertext text={item.name.toUpperCase()} />
-              </div>
-            </animated.div>
-          ))
-        )}
-      </animated.div>
     </main>
   );
 };

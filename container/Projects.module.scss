@@ -9,7 +9,7 @@
 .project{
   transition: all ease-in-out 300ms;
   position:relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
     z-index: 2;
     padding: 13vh 7vw;
     width: 100%;
-    color: var(--color-background);
+    // color: var(--color-background);
     *{
       transition: all ease-in-out 300ms;
     }
@@ -35,12 +35,14 @@
       font-size: 1rem;
       font-weight: 800;
       font-family: var(--font-monospace);
+      mix-blend-mode: multiply;
     }
     .project__title{
       font-size: 4rem;
       margin: 0.5rem 0;
       font-weight: 700;
       font-family: var(--font-cursive);
+      mix-blend-mode: multiply;
     }
     .project__description{
       font-size: 1.3rem;

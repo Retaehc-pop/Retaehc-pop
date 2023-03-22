@@ -1,8 +1,8 @@
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%; // image per slide
-  padding: 1%;
-  aspect-ratio: 32/9;
+  // width: 100%;
+  height: fit-content;
   position: relative;
   .viewport {
     overflow: hidden;
@@ -12,6 +12,13 @@
       flex-direction: row;
       height: 100%;
       margin-left: calc(var(--slide-spacing) * -1);
+      &:nth-child(n){
+        flex: 0 0 var(--slide-size);
+        min-width: 0;
+        padding-left: var(--slide-spacing);
+        position: relative;
+        height: 100%;
+      }
       .slide {
         flex: 0 0 var(--slide-size);
         min-width: 0;
