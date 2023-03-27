@@ -32,13 +32,13 @@
     }
     // background-color: red;
     .project__date{
-      font-size: 1rem;
+      // font-size: 1rem;
       font-weight: 800;
       font-family: var(--font-monospace);
       mix-blend-mode: multiply;
     }
     .project__title{
-      font-size: 4rem;
+      // font-size: 4rem;
       margin: 0.5rem 0;
       font-weight: 700;
       font-family: var(--font-cursive);
@@ -50,6 +50,7 @@
       margin: 0 1rem;
       font-weight: 400;
       opacity: 0;
+
     }
     .project__links{
       transition: all ease-in-out 300ms;
@@ -88,6 +89,11 @@
       .project__links, .project__line{
         transition: all ease-in-out 300ms;
         transform: translateY(3rem);
+      }
+    }
+    @media screen and (max-width: 768px){
+      &:hover{
+
       }
     }
   }

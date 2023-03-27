@@ -13,6 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     a{
       border: 2px solid var(--color-background);
       padding: 1rem 2rem;
@@ -23,6 +24,5 @@
         scale: 1.1;
       }
     }
-    // background-color: var(--color-background);
   }
 }

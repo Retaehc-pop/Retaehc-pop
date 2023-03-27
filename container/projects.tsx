@@ -91,6 +91,7 @@ const Projects = () => {
   const OPTIONS:EmblaOptionsType ={
     loop: true,
     draggable: true,
+    dragFree: true,
 
   }
   return (

@@ -18,7 +18,6 @@ const About = () => {
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [sine, setSine] = useState(0);
-  const [openSkill, setOpenSkill] = useState(false);
   const leftRef = useSpringRef();
   const upRightRef = useSpringRef();
   const downRightRef = useSpringRef();

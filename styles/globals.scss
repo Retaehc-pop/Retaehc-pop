@@ -32,7 +32,6 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-
 * {
   box-sizing: border-box;
   transform: all 0.2s ease-in-out;
@@ -73,8 +72,49 @@ nav {
     }
   }
 }
+h1{
+  font-size: 3rem;
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+h2{
+  font-size: 2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+h3{
+  font-size: 1.5rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+h4{
+  font-size: 1rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.5rem;
+  }
+}
+h5{
+  font-size: 0.8rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.4rem;
+  }
+}
+h6{
+  font-size: 0.6rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.3rem;
+  }
+}
+p{
+  font-size: 1rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+}
 main {
-  // background-color: red;
   min-height: 100vh;
   margin: 0 3%;
   display: flex;
