@@ -29,6 +29,7 @@ const Page = () => {
           {
             refs.map((ref, index) => {
               return <DotButton 
+              key={index}
               selected={index === selectedIndex}
               onClick={() => {
                 setSelectedIndex(index)
