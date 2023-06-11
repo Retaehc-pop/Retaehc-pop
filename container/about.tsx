@@ -13,9 +13,7 @@ import {
 import Hypertext from "../components/hypertext";
 import Icon from "../components/Icon";
 
-
 const About = () => {
-
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [sine, setSine] = useState(0);
   const leftRef = useSpringRef();
@@ -48,16 +46,14 @@ const About = () => {
       scale: 2,
       opacity: 0,
     },
-    to:{
+    to: {
       transform: "translateY(0%)",
       scale: 5,
       opacity: 1,
     },
     config: config.gentle,
   });
-  useChain([leftRef, upRightRef, downRightRef, downRef],
-    [0, 0.5, 0.5, 0.7]
-  );
+  useChain([leftRef, upRightRef, downRightRef, downRef], [0, 0.5, 0.5, 0.7]);
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({
@@ -79,7 +75,6 @@ const About = () => {
     }, 10);
     return () => clearInterval(interval);
   }, []);
-
 
   return (
     <main className={styles.main}>
