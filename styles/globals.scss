@@ -24,6 +24,7 @@ body {
   background-color: var(--color-backgound);
   color: var(--color-text);
   min-height: 100vh;
+  height:100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -84,6 +85,8 @@ p{
 }
 main {
   min-height: 100vh;
+  height: auto;
+  // width: 100%;
   margin: 0 3%;
   display: flex;
   flex-direction: column;
