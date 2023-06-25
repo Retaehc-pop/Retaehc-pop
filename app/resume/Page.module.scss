@@ -1,0 +1,26 @@
+.container{
+  position: relative;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5% 10%;
+  width: 50%;
+  h1{
+    margin: 0rem 0;
+  }
+  .button{
+    font-size: 1.5rem;
+    color: var(--color-background);
+    background-color: var(--color-text);
+    border: 1px solid var(--color-text);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: all ease-in-out 100ms;
+    &:hover{
+      color: var(--color-text);
+      background-color: var(--color-background);
+      border: 1px solid var(--color-text);
+    }
+  }
+}
