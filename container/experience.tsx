@@ -2,17 +2,18 @@
 import styles from './Experience.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { comfortaa, roboto_mono} from '../lib/fonts';
 const ExperienceCard = (info:any) => {
   const {title,title2, from, to, description,icon} = info;
 
   return (
     <div className={styles.card}>
-      <div className={styles.date}>
-        <h4>{from} ─  {to}</h4>
+      <div className={`${styles.date} ${roboto_mono.className}`} >
+        <h4>{from} - {to}</h4>
       </div>
       <div className={styles.info}>
-        <h4>{title} <FontAwesomeIcon icon={icon}/></h4>
-        <h5>{title2}</h5>
+        <h4 style={{fontWeight:'700'}} className={comfortaa.className}>{title} <FontAwesomeIcon icon={icon}/></h4>
+        <h5 className={comfortaa.className}>{title2}</h5>
         <p>{description}</p>
       </div>
     </div>

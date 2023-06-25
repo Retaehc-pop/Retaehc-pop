@@ -3,6 +3,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styles from "../styles/Components.module.scss";
+import { comfortaa } from "../lib/fonts";
 type Prototype = {
   context: string;
   speed: number;
@@ -30,7 +31,7 @@ const Typing: React.FC<Prototype> = (props) => {
   },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div style={{ padding: "0 1rem", textAlign: "left" }}>
+    <div className={comfortaa.className} style={{ padding: "0 1rem", textAlign: "left" }}>
       {text}
       {cursor ? <span className={styles.cursor}>_</span> : null}
     </div>

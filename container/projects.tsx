@@ -8,11 +8,12 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
-  faLink,
   faArrowUpRightFromSquare,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Hypertext from "../components/hypertext";
+import { comfortaa, roboto_mono } from "../lib/fonts";
+
 const MONTH = [
   "January",
   "February",
@@ -55,11 +56,11 @@ const Project = ({ project }: { project: projectWithInfo }) => {
             : { color: "var(--color-text)" }
         }
       >
-        <p className={styles.project__date}>
+        <p className={`${styles.project__date} ${roboto_mono.className}`}>
           {MONTH[new Date(project.date).getMonth()]}{" "}
           {new Date(project.date).getFullYear()}
         </p>
-        <h1 className={styles.project__title}>
+        <h1 className={`${styles.project__title} ${comfortaa.className}`}>
           {project.name}
           {project.url && (
             <Link href={project.url} passHref>
@@ -72,7 +73,7 @@ const Project = ({ project }: { project: projectWithInfo }) => {
           <div className={styles.project__tags}>
             {project.tags &&
               project.tags.map((tag: any) => (
-                <p key={tag.id} className={styles.project__tag}>
+                <p key={tag.id} style={{fontWeight:'400'}} className={styles.project__tag}>
                   {tag.name}
                 </p>
               ))}
@@ -115,7 +116,7 @@ const Projects = () => {
           <Project key={project.id} project={project} />
         ))}
       </div>
-      <Link className={styles.more} href="" passHref>
+      <Link className={styles.more} style={{fontWeight:'700'}} href="/project" passHref>
           <Hypertext text={"EXPLORE MORE"}/> 
           <FontAwesomeIcon icon={faArrowRight} />
       </Link>

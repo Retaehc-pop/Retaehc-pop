@@ -7,7 +7,7 @@ import { EmblaOptionsType } from "embla-carousel-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-
+import { comfortaa } from "../lib/fonts";
 const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [images, setImages] = useState([
@@ -35,8 +35,8 @@ const About = () => {
   return (
     <main className={styles.main} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
       <p>HI! I'M POP</p>
-      <h1>Papop Lekhapanyaporn</h1>
-      <h2>Student developer</h2>
+      <h1 className={comfortaa.className} >Papop Lekhapanyaporn</h1>
+      <h2 className={comfortaa.className}>Student developer</h2>
       <p className={styles.introduction}>
         I'm a self taught developer who is currently studying in Computer science. 
         I have huge interest in Machine learning, Artificial Intelligent and high performance computing! 

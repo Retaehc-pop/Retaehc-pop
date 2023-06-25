@@ -10,6 +10,7 @@ import { LineButton } from "../components/Button";
 import { useState } from "react";
 import Images from "../container/image";
 import Hypertext from "../components/hypertext";
+import { roboto_mono, comfortaa } from "../lib/fonts";
 
 const useElementOnScreen = (options: any) => {
   const containerRef = useRef<any>(null);
@@ -21,16 +22,15 @@ const useElementOnScreen = (options: any) => {
   };
 
   useEffect(() => {
-
     let observerRefValue: Element | null = null; // <-- variable to hold ref value
 
     const observer = new IntersectionObserver(callbackFunction, options);
-  
+
     if (containerRef.current) {
       observer.observe(containerRef.current);
       observerRefValue = containerRef.current; // <-- save ref value
     }
-  
+
     return () => {
       if (observerRefValue) observer.unobserve(observerRefValue); // <-- use saved value
     };
@@ -66,15 +66,15 @@ const Page = () => {
     if (AboutinView) setSelectedIndex(1);
     if (ExperienceinView) setSelectedIndex(2);
     if (ProjectinView) setSelectedIndex(3);
-  }, [HomeinView, AboutinView, ProjectinView,ExperienceinView]);
+  }, [HomeinView, AboutinView, ProjectinView, ExperienceinView]);
 
   return (
     <div>
       <aside className={styles.aside}>
         <ul>
           {refs.map((ref, index) => (
-            <div 
-            key={index}
+            <div
+              key={index}
               className={
                 index === selectedIndex
                   ? styles.binder__selected
@@ -97,7 +97,8 @@ const Page = () => {
       <div ref={Homeref}>
         <Home />
       </div>
-      <div className={styles.half__page} />
+      {/* <div className={styles.half__page} /> */}
+      <div className={styles.quater__page}/>
       <div className={styles.info}>
         <section className={styles.about}>
           <div>
@@ -114,11 +115,8 @@ const Page = () => {
           <div ref={Projectref}>
             <Projects />
           </div>
-          <div className={styles.quater__page} style={{
-            fontWeight: '200',
-            fontFamily: 'var(--font-monospace)',
-            fontSize: '2rem'}}>
-            <Hypertext text="MORE COMING SOON ... "/>
+          <div className={styles.quater__page} style={{ fontSize: "1.5rem" }}>
+            <Hypertext text="MORE COMING SOON ... " />
           </div>
         </section>
       </div>

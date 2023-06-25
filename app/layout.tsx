@@ -2,9 +2,9 @@ import React from "react";
 import ContactIcons from "../container/contactIcons";
 import "../styles/globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import type { Metadata } from 'next'
-
-export const metadata:Metadata = {
+import type { Metadata } from "next";
+import { montserrat} from "../lib/fonts";
+export const metadata: Metadata = {
   title: "Papop",
   generator: "Next.js",
   applicationName: "Papop's Website",
@@ -28,7 +28,7 @@ export const metadata:Metadata = {
     address: false,
     telephone: false,
   },
-  category: 'technology',
+  category: "technology",
   icons: {
     icon: "/favicon.ico",
   },
@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${montserrat.className}`}>
       <body>
         {children}
         <ContactIcons />

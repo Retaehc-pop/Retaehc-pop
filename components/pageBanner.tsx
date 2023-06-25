@@ -1,7 +1,7 @@
 "use client"
 import styles from "../styles/Components.module.scss";
 import { useEffect, useState } from "react";
-
+import { comfortaa } from "../lib/fonts";
 const PageBanner = ({ children }: { children: string }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -16,8 +16,8 @@ const PageBanner = ({ children }: { children: string }) => {
   },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className={styles.pageBanner}>
-      <h1 style={{ transform: `translate(${mousePos.y/100}px,${ mousePos.x/100}px) ` }}>{children.toUpperCase()}</h1>
+    <div  className={`${comfortaa.className} ${styles.pageBanner}`} >
+      <h1 style={{fontWeight:'300',transform: `translate(${mousePos.y/100}px,${ mousePos.x/100}px) ` }}>{children.toUpperCase()}</h1>
     </div>
   );
 };

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import React from "react";
-
+import { roboto_mono } from "../lib/fonts";
 type Prototype = {
   text: string;
   delay?: number;
@@ -60,13 +60,13 @@ const Hypertext:React.FC<Prototype> = (props) => {
 
   return (
     <div
+      className={roboto_mono.className}
       style={{
         height: "100%",
         width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        font: 'var(--font-monospace)',
       }}
       onMouseEnter={() => changeTo(originalText)}
     >

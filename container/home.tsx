@@ -7,7 +7,7 @@ import { config } from "@react-spring/web";
 import Hypertext from "../components/hypertext";
 import JumpText from "../components/jumpText";
 import { useInView } from "react-intersection-observer";
-
+import { roboto_mono, comfortaa } from "../lib/fonts";
 
 const Home = () => {
 
