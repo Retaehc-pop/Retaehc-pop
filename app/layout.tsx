@@ -1,10 +1,5 @@
 import React from "react";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import Logo from "../public/favicon.ico";
 import ContactIcons from "../container/contactIcons";
-import Hypertext from "../components/hypertext";
 import "../styles/globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from 'next'
