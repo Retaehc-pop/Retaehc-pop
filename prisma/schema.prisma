@@ -28,18 +28,8 @@ model Technology {
   id        Int       @id @default(autoincrement())
   name      String    @unique
   experties Int       @default(0)
-  position  Position?
   project   Project[]
 }
-
-model Position {
-  id           Int        @id @default(autoincrement())
-  x            Int        @default(0)
-  y            Int        @default(0)
-  Technology   Technology @relation(fields: [technologyId], references: [id])
-  technologyId Int        @unique
-}
-
 
 model Tag{
   id        Int       @id @default(autoincrement())
