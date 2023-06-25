@@ -66,9 +66,9 @@ const Hypertext:React.FC<Prototype> = (props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        font: 'var(--font-monospace)',
       }}
-      onMouseEnter={() => changeTo(originalText.toUpperCase())}
-      // onMouseLeave={() => changeTo(originalText.toUpperCase(), true)}
+      onMouseEnter={() => changeTo(originalText)}
     >
       {currentText}
     </div>

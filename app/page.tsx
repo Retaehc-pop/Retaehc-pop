@@ -9,6 +9,8 @@ import { useRef, useEffect } from "react";
 import { LineButton } from "../components/Button";
 import { useState } from "react";
 import Images from "../container/image";
+import Hypertext from "../components/hypertext";
+
 const useElementOnScreen = (options: any) => {
   const containerRef = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -105,9 +107,14 @@ const Page = () => {
           <div ref={Projectref}>
             <Projects />
           </div>
+          <div className={styles.quater__page} style={{
+            fontWeight: '200',
+            fontFamily: 'var(--font-monospace)',
+            fontSize: '2rem'}}>
+            <Hypertext text="MORE COMING SOON ... "/>
+          </div>
         </section>
       </div>
-      <div className={styles.half__page} />
     </div>
   );
 };

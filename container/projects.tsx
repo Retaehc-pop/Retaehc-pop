@@ -115,10 +115,10 @@ const Projects = () => {
           <Project key={project.id} project={project} />
         ))}
       </div>
-      <div className={styles.more}>
+      <Link className={styles.more} href="" passHref>
           <Hypertext text={"EXPLORE MORE"}/> 
           <FontAwesomeIcon icon={faArrowRight} />
-      </div>
+      </Link>
     </main>
   );
 };
