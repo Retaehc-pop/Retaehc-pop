@@ -4,13 +4,22 @@ type DotButtonPropType = {
   selected: boolean;
   onClick: () => void;
 };
+export const LineButton: React.FC<DotButtonPropType> = (props) => {
+  const { selected, onClick } = props;
+  return (
+    <div className={styles.line__wrapper} onClick={onClick}>
+      <div
+        className={selected ? styles.line__selected : styles.line}
+      />
+    </div>
+  );
+}
 
 export const DotButton: React.FC<DotButtonPropType> = (props) => {
   const { selected, onClick } = props;
 
   return (
     <button
-      // className={`${styles.dot} ${selected? styles.dot_selected:""})`}
       className={selected ? styles.dot_selected : styles.dot}
       type="button"
       onClick={onClick}

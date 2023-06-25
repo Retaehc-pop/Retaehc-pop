@@ -1,62 +1,38 @@
 .main {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 5% 10%;
+  h1{
+    margin: 0rem 0;
+  }
+}
+.image_container{
+  aspect-ratio: 2/1;
+  width: 100%;
+  height: auto;
+  .image{
+    display: block;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
-.pic {
-  $size: 40;
-  position: relative;
-  aspect-ratio: 1.681/1;
-  width: calc($size * 1rem);
-  border: solid calc($size * 0.01rem) var(--color-background);
-  border-width: calc($size * 0.01rem);
-  border-style: solid;
-}
-
-.skill_button {
-  will-change: width, height;
-  position: absolute;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  h3{
-    margin: 0;
-  }
-}
-
-.icons{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.1s ease-in-out;
-  .icon{
-    width: 1.5rem;
-    height: 1.5rem;
-    transition: all 0.1s ease-in-out;
-  }
-  .text{
-    position: absolute;
-    opacity: 0;
-    transition: all 0.1s ease-in-out;
-    font-family: var(--font-cursive);
-  }
+.button{
+  color: var(--color-background);
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: all ease-in-out 100ms;
   &:hover{
-    transition: all 0.1s ease-in-out;
-    .icon{
-      opacity: 0;
-      transition: all 0.1s ease-in-out;
-    }
-    .text{
-      opacity: 1;
-      transition: all 0.1s ease-in-out;
-    }
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-text);
   }
+
+}
+.introduction{
+  text-align: justify;
 }

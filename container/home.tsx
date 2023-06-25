@@ -42,7 +42,7 @@ const Home = () => {
   useChain(inView ? [typingref, fadeinref] : [typingref,fadeinref], [0, speed / 1000]);
 
   return (
-    <main ref={ref}>
+    <main style={{height:"100vh"}} ref={ref}>
       <animated.div className={styles.bannertop} style={{ ...fadeindown }}>
         <JumpText text="👾" />
         <div> HI! I'M POP</div>

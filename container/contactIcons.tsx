@@ -1,19 +1,14 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import Hypertext from "../components/hypertext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faEnvelope,
-  faEnvelopeOpen,
-} from "@fortawesome/free-regular-svg-icons";
-import {
   faGithub,
   faLinkedin,
   faTwitter,
-  faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./contactIcons.module.scss";
+import { faM } from "@fortawesome/free-solid-svg-icons";
 const ContactIcons = () => {
   return (
     <div className={styles.container}>
@@ -38,7 +33,7 @@ const ContactIcons = () => {
 
       <Link href="mailto:papop.lekhapanyaporn@gmail.com" passHref>
         <div>
-          <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
+          <FontAwesomeIcon icon={faM} className={styles.icon} />
           <span><Hypertext text="EMAIL"/></span>
         </div>
       </Link>
