@@ -111,10 +111,12 @@ const Projects = () => {
   return (
     <main className={styles.main}>
       <div className={styles.wrapper}>
-      {projects &&
+      {projects ?
         projects.map((project) => (
           <Project key={project.id} project={project} />
-        ))}
+        )):
+        <p style={{fontWeight:'400'}}>loading...</p>
+      }
       </div>
       <Link className={styles.more} style={{fontWeight:'700'}} href="/project" passHref>
           <Hypertext text={"EXPLORE MORE"}/> 
