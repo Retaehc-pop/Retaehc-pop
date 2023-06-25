@@ -5,7 +5,7 @@ import Home from "../container/home";
 import About from "../container/about";
 import Projects from "../container/projects";
 import Experience from "../container/experience";
-import { useRef, useEffect} from "react";
+import { useRef, useEffect } from "react";
 import { LineButton } from "../components/Button";
 import { useState } from "react";
 import Images from "../container/image";
@@ -64,7 +64,8 @@ const Page = () => {
       <aside className={styles.aside}>
         <ul>
           {refs.map((ref, index) => (
-            <div
+            <div 
+            key={index}
               className={
                 index === selectedIndex
                   ? styles.binder__selected

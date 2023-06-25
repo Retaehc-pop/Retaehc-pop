@@ -12,47 +12,48 @@ type Prototype = {
   options: EmblaOptionsType;
 };
 
-const Carousel : React.FC<Prototype>= (props) => {
+const Carousel: React.FC<Prototype> = (props) => {
   const { children, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  // const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  // const [scrollProgress, setScrollProgress] = useState(0);
 
-  const scrollPrev = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
+  // const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  // const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-  const scrollNext = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
+  // const scrollPrev = useCallback(
+  //   () => emblaApi && emblaApi.scrollPrev(),
+  //   [emblaApi]
+  // );
 
-  const scrollTo = useCallback(
-    (index: number) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return; 
+    emblaApi.scrollNext();
+    console.log(emblaApi.scrollProgress());
+  }, [emblaApi]);
+
+  // const scrollTo = useCallback(
+  //   (index: number) => emblaApi && emblaApi.scrollTo(index),
+  //   [emblaApi]
+  // );
 
   const onScroll = useCallback(() => {
     if (!emblaApi) return;
-    const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
-    setScrollProgress(progress * 100);
-  }, [emblaApi, setScrollProgress]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
+    console.log(emblaApi.scrollProgress());
   }, [emblaApi]);
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    onScroll();
-    emblaApi.on("scroll", onScroll);
-    emblaApi.on("reInit", onScroll);
-  }, [emblaApi, onScroll, onSelect]);
+  // const onSelect = useCallback(() => {
+  //   if (!emblaApi) return;
+  //   setPrevBtnEnabled(emblaApi.canScrollPrev());
+  //   setNextBtnEnabled(emblaApi.canScrollNext());
+  // }, [emblaApi]);
+
+  // useEffect(() => {
+  //   if (!emblaApi) return;
+  //   onScroll();
+  //   emblaApi.on("scroll", onScroll);
+  //   emblaApi.on("reInit", onScroll);
+  // }, [emblaApi, onScroll, onSelect]);
 
   return (
     <div className={styles.embla}>
