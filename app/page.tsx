@@ -21,11 +21,18 @@ const useElementOnScreen = (options: any) => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
-    if (containerRef.current) observer.observe(containerRef.current);
 
+    let observerRefValue: Element | null = null; // <-- variable to hold ref value
+
+    const observer = new IntersectionObserver(callbackFunction, options);
+  
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+      observerRefValue = containerRef.current; // <-- save ref value
+    }
+  
     return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      if (observerRefValue) observer.unobserve(observerRefValue); // <-- use saved value
     };
   }, [containerRef, options]);
 
@@ -59,7 +66,7 @@ const Page = () => {
     if (AboutinView) setSelectedIndex(1);
     if (ExperienceinView) setSelectedIndex(2);
     if (ProjectinView) setSelectedIndex(3);
-  }, [HomeinView, AboutinView, ProjectinView]);
+  }, [HomeinView, AboutinView, ProjectinView,ExperienceinView]);
 
   return (
     <div>

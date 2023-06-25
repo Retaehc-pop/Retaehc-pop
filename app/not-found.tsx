@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <main className={styles.notfound}>
       <h1>404</h1>
-      <h2>Go Back! There's nothing here</h2>
+      <h2>Go Back! There&apos;s nothing here</h2>
       <div>
         <Link href="/"><FontAwesomeIcon icon={faHome} /></Link>
       </div>

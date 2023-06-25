@@ -16,12 +16,6 @@ if (process.env.NODE_ENV === "production") {
   prisma = global.prisma;
 }
 
-export type technologyWithPosition = Prisma.TechnologyGetPayload<{
-  include: {
-    position: true;
-  };
-}>;
-
 export type projectWithInfo = Prisma.ProjectGetPayload<{
   include: {
     tags: true;
