@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma": "dotenv -e .env.local prisma"
+    "prisma": "dotenv -e .env.development.local prisma"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
@@ -21,6 +21,7 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "@vercel/postgres": "^0.4.0",
     "dotenv": "^16.0.3",
     "embla-carousel-autoplay": "^8.0.0-rc07",
     "embla-carousel-react": "^8.0.0-rc07",
