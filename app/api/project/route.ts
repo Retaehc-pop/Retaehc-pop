@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     }
   })  
   if (!res) {
-    return new NextResponse('Not Found',{ status: 400 });
+    return new NextResponse('Not Found',{ status: 404 });
   }
   const data = await JSON.stringify(res);
   return new NextResponse(data,{ status: 200 });

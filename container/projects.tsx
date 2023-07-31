@@ -35,7 +35,7 @@ async function getAllProjects() {
   return data;
 }
 
-const Project = ({ project }: { project: projectWithInfo }) => {
+export const ProjectElement = ({ project }: { project: projectWithInfo }) => {
   return (
     <div className={styles.project}>
       <div className={styles.project__image}>
@@ -113,7 +113,7 @@ const Projects = () => {
       <div className={styles.wrapper}>
       {projects ?
         projects.map((project) => (
-          <Project key={project.id} project={project} />
+          <ProjectElement key={project.id} project={project} />
         )):
         <p style={{fontWeight:'400'}}>loading...</p>
       }

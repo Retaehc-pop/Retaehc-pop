@@ -88,21 +88,6 @@
       height: 1px;
       background-color: var(--color-background);
     }
-    // &:hover, &:focus, &:active{
-    //   .project__date, .project__title{
-    //     transition: all ease-in-out 300ms;
-    //     transform: translateY(-3rem);
-    //   }
-    //   .project__description{
-    //     transition: all ease-in-out 300ms;
-    //     // margin: 5vh 0;
-    //     opacity: 1;
-    //   }
-    //   .project__links, .project__line{
-    //     transition: all ease-in-out 300ms;
-    //     transform: translateY(3rem);
-    //   }
-    // }
     @media screen and (max-width: 768px) {
       .project__description {
         display: none;

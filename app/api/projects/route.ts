@@ -14,15 +14,13 @@ export async function GET(request: NextRequest) {
           }
         },
       },
-      where: {
-        published: true,
-        hilight: highlight==='1' ? true : false
-      },
+      where: highlight==='1' ? {  hilight: true } : { published: true },
+      orderBy: { date: 'desc' }
     });
     const data = await JSON.stringify(res);
     return new NextResponse(data, { status: 200 });
   }
   catch(err:any){
-    return new NextResponse(err, { status: 400 });
+    return new NextResponse(err, { status: 404 });
   }
 }
