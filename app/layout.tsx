@@ -3,7 +3,10 @@ import ContactIcons from "../container/contactIcons";
 import "../styles/globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { montserrat} from "../lib/fonts";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 export const metadata: Metadata = {
   title: "Papop",
   generator: "Next.js",
@@ -11,6 +14,7 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   description: "Papop's website",
   keywords: [
+    "Lekhapanyaporn",
     "Papop",
     "retaehc",
     "pop",
@@ -42,6 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.className}`}>
       <body>
+        <div style={{"margin":"0.5em","fontSize":"2em","position":"fixed"}}>
+          <Link href={"/"} passHref>
+            <FontAwesomeIcon icon={faHome}/>
+          </Link>
+        </div>
+        
         {children}
         <ContactIcons />
         <footer>

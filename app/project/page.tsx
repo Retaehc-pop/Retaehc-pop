@@ -23,6 +23,9 @@ const Project = () => {
 
   return (
   <main className={comfortaa.className}>
+    <div className={styles.quater__page}>
+      <h1>Project</h1>
+    </div>
     <div className={styles.wrapper}>
       {projects ?
         projects.map((project:projectWithInfo) => (
