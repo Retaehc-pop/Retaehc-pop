@@ -1,4 +1,4 @@
-import { Montserrat, Comfortaa, Roboto_Mono } from "@next/font/google";
+import { Montserrat, Comfortaa, Roboto_Mono } from "next/font/google";
 
 export const montserrat = Montserrat({
   subsets: ["latin-ext"],
