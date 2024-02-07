@@ -18,6 +18,9 @@ export async function GET(request: NextRequest) {
         where: {
           published: true,
           hilight: true,
+        },
+        orderBy: {
+          date: "desc",
         }
       });
       const data = await JSON.stringify(res);
@@ -35,6 +38,9 @@ export async function GET(request: NextRequest) {
         where: {
           published: true,
         },
+        orderBy:{
+          'date':'desc'
+        }
       });
       const data = await JSON.stringify(res);
       return new NextResponse(data, { status: 200 });
