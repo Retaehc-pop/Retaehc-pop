@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Hypertext from "../components/hypertext";
 import { comfortaa, roboto_mono } from "../lib/fonts";
+import ProjectBanner from "../components/projectBanner";
 
 const MONTH = [
   "January",
@@ -35,70 +36,6 @@ async function getAllProjects() {
   return data;
 }
 
-const Project = ({ project }: { project: projectWithInfo }) => {
-  return (
-    <div className={styles.project}>
-      <div className={styles.project__image}>
-        {project.image && (
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        )}
-      </div>
-      <div
-        className={styles.project__info}
-        style={
-          project.image
-            ? { color: "var(--color-background)" }
-            : { color: "var(--color-text)" }
-        }
-      >
-        <p className={`${styles.project__date} ${roboto_mono.className}`}>
-          {MONTH[new Date(project.date).getMonth()]}{" "}
-          {new Date(project.date).getFullYear()}
-        </p>
-        <h1 className={`${styles.project__title} ${comfortaa.className}`}>
-          {project.name}
-          {project.url && (
-            <Link href={project.url} passHref>
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            </Link>
-          )}
-        </h1>
-        {/* <p className={styles.project__description}>{project.description}</p> */}
-        <div className={styles.project__links}>
-          <div className={styles.project__tags}>
-            {project.tags &&
-              project.tags.map((tag: any) => (
-                <p key={tag.id} style={{fontWeight:'400'}} className={styles.project__tag}>
-                  {tag.name}
-                </p>
-              ))}
-          </div>
-          <div className={styles.project__tags}>
-            {project.source && (
-              <Link href={project.source} passHref>
-                <FontAwesomeIcon icon={faGithub} />
-              </Link>
-            )}
-          </div>
-        </div>
-        <div
-          className={styles.project__line}
-          style={
-            project.image
-              ? { backgroundColor: "var(--color-background)" }
-              : { backgroundColor: "var(--color-text)" }
-          }
-        ></div>
-      </div>
-    </div>
-  );
-};
-
 const Projects = () => {
   const [projects, setProjects] = useState<projectWithInfo[]>();
 
@@ -113,7 +50,7 @@ const Projects = () => {
       <div className={styles.wrapper}>
       {projects ?
         projects.map((project) => (
-          <Project key={project.id} project={project} />
+          <ProjectBanner key={project.id} project={project} />
         )):
         <p style={{fontWeight:'400'}}>loading...</p>
       }

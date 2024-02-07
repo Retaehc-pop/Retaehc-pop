@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import styles from './Page.module.scss'
 import { comfortaa } from "../../lib/fonts";
-
+import { projectWithInfo } from "../../lib/prisma";
+import ProjectBanner from "../../components/projectBanner";
 async function getAllProjects() {
-  const res = await fetch(`../api/projects?highlight=1`);
+  const res = await fetch(`../api/projects`);
   const data = await res.json();
   return data;
 }
@@ -17,16 +19,18 @@ const Project = () => {
   
   useEffect(() => {
     getAllProjects().then((data) => setProjects(data));
-  }
-  , []);
+  },[]);
 
   return (
   <main className={comfortaa.className}>
-    <h1>Under Development</h1>
-    <Link href="/" passHref>
-        <FontAwesomeIcon icon={faHome} />
-    </Link>
-
+    <div className={styles.wrapper}>
+      {projects ?
+        projects.map((project:projectWithInfo) => (
+          <ProjectBanner key={project.id} project={project} />
+        )):
+        <p style={{fontWeight:'400'}}>loading...</p>
+      }
+      </div>
   </main>
   );
 };

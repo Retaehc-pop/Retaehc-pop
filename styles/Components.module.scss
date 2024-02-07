@@ -76,3 +76,138 @@
     }
   }
 }
+
+.project {
+  transition: all ease-in-out 300ms;
+  position: relative;
+  aspect-ratio: 10/1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  .project__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.6);
+  }
+
+  .project__info {
+    z-index: 2;
+    padding-left: 5%;
+    width: 100%;
+
+    * {
+      transition: all ease-in-out 300ms;
+    }
+
+    .project__date {
+      font-weight: 800;
+      mix-blend-mode: multiply;
+    }
+
+    .project__title {
+      margin: 0.5rem 0;
+      font-weight: 700;
+      mix-blend-mode: multiply;
+    }
+
+    .project__description {
+      font-size: 1.3rem;
+      transition: all ease-in-out 300ms;
+      margin: 0 1rem;
+      font-weight: 400;
+      opacity: 0;
+    }
+
+    .project__links {
+      transition: all ease-in-out 300ms;
+      display: flex;
+      width: 100%;
+      height: auto;
+      justify-content: space-between;
+      align-items: center;
+
+      .project__tags {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .project__tag {
+          font-weight: 800;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+
+    .project__line {
+      transition: all ease-in-out 300ms;
+      margin: 2rem 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-background);
+    }
+
+    // &:hover, &:focus, &:active{
+    //   .project__date, .project__title{
+    //     transition: all ease-in-out 300ms;
+    //     transform: translateY(-3rem);
+    //   }
+    //   .project__description{
+    //     transition: all ease-in-out 300ms;
+    //     // margin: 5vh 0;
+    //     opacity: 1;
+    //   }
+    //   .project__links, .project__line{
+    //     transition: all ease-in-out 300ms;
+    //     transform: translateY(3rem);
+    //   }
+    // }
+    @media screen and (max-width: 768px) {
+      .project__description {
+        display: none;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        .project__date,
+        .project__title {
+          transition: all ease-in-out 300ms;
+          transform: translateY(-3rem);
+        }
+
+        .project__description {
+          display: block;
+          transition: all ease-in-out 300ms;
+          // margin: 5vh 0;
+          opacity: 1;
+        }
+
+        .project__links,
+        .project__line {
+          transition: all ease-in-out 300ms;
+          transform: translateY(3rem);
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper:hover>.project {
+  filter: brightness(0.5);
+}
+
+.wrapper>.project:hover {
+  transform: scale(1.01);
+  filter: brightness(1);
+  // opacity:1;
+}
