@@ -5,7 +5,8 @@ import Image from "next/image";
 import Carousel from "../components/carousel";
 import { EmblaOptionsType } from "embla-carousel-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { faFile, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 import { comfortaa } from "../lib/fonts";
 const About = () => {
@@ -49,7 +50,10 @@ const About = () => {
         Coding is my passion and I love to learn new things!
         </p>
       <div className={styles.button}>
-        <Link href="/resume">resume <FontAwesomeIcon icon={faFile}/> </Link>
+        <Link href="/resume">Resume <FontAwesomeIcon icon={faFile}/> </Link>
+      </div>
+      <div className={styles.button}>
+        <Link href="/blog">Blog <FontAwesomeIcon icon={faComment}/> </Link>
       </div>
       
     </main>
