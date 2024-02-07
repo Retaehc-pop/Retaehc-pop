@@ -2,13 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 :root {
-  --color-text: rgb(0, 0, 0);
-  --color-button: #dedee2;
-  --color-icon: #686869;
-  --color-line: #44496a;
-  --color-background: #eeee;
-  --color-background-tritary: #6096b4;
-  --color-background-secondary: #93bfcf;
+  --color-text: #2E3440;
+  --color-icon: #4C566A;
+  --color-line: #434C5E;
+  --color-background: #E5E9F0;
+  --color-background-tritary: #434C5E;
+  --color-background-secondary: #88C0D0;
+  --color-error:#BF616A;
+  --color-warning:#D08770;
+  --color-warning-secondary:#EBCB8B;
+  --color-ok:#A3BE8C;
+  --color-hilight:#B48EAD;
   --font-monospace: var(--font-roboto-mono), monospace;
   --font-sans: var(--font-montserrat), sans-serif;
   --font-cursive: var(--font-comfortaa);
