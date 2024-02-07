@@ -36,7 +36,7 @@ const About = () => {
     <main className={styles.main} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
       <p>HI! I'M POP</p>
       <h1 className={comfortaa.className} >Papop Lekhapanyaporn</h1>
-      <h2 className={comfortaa.className}>Student developer</h2>
+      <h2 className={comfortaa.className}>Software Developer</h2>
       <p className={styles.introduction}>
         I'm a self taught developer who is currently studying in Computer science. 
         I have huge interest in Machine learning, Artificial Intelligent and high performance computing! 

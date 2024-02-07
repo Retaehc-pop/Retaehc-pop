@@ -32,13 +32,21 @@ const Experience = () => {
     to:'2022',
     description:'Research and Development of multiple CanSat/CubeSat projects'
   }
+  const rcp = {
+    icon: faBriefcase,
+    title:'Redcare Pharmacy',
+    title2:'Working student',
+    from:'2023',
+    to:'present',
+    description:'E-perscription & TI, Tech & Requirement Engineering'
+  }
   const rwth = {
     icon: faGraduationCap,
     title:'RWTH Aachen University',
     title2:'Aachen, Germany',
     from:'2022',
     to:'present',
-    description:'Bachelor of Science in Computer Science'
+    description:'B.SC Computer Science'
   }
   const assumption = {
     icon: faGraduationCap,
@@ -51,6 +59,7 @@ const Experience = () => {
   return (
     <main className={styles.main}>
       <div className={styles.wrapper}>
+      <ExperienceCard {...rcp}/>
       <ExperienceCard {...rwth}/>
       <ExperienceCard {...spaceac}/>
       <ExperienceCard {...assumption}/>

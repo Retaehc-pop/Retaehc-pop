@@ -24,12 +24,12 @@ const ContactIcons = () => {
           <span><Hypertext text="LINKEDIN"/></span>
         </div>
       </Link>
-      <Link href="" passHref>
+      {/* <Link href="" passHref>
         <div>
           <FontAwesomeIcon icon={faTwitter} className={styles.icon} />
           <span><Hypertext text="TWITTER"/></span>
         </div>
-      </Link>
+      </Link> */}
 
       <Link href="mailto:papop.lekhapanyaporn@gmail.com" passHref>
         <div>
