@@ -8,7 +8,7 @@ const Resume = () => {
       <h1>Resume</h1>
       <p>latest update: 01.06.2023</p>
       <div className={styles.container}>
-        <Link className={styles.button} href="/resume_de.pdf" download passHref>
+        <Link className={styles.button} href="/resume_en.pdf" download passHref>
           <FontAwesomeIcon icon={faDownload} /> English
         </Link>
 
