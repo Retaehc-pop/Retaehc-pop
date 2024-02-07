@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { montserrat} from "../lib/fonts";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 export const metadata: Metadata = {
   title: "Papop",
   generator: "Next.js",
@@ -46,9 +47,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.className}`}>
       <body>
-        <div style={{"margin":"0.5em","fontSize":"2em","position":"fixed"}}>
+        <div style={{"margin":"0.5em","fontSize":"2em","position":"fixed","width":"50px","height":"50px","cursor":"pointer","color":"black"}}>
           <Link href={"/"} passHref>
-            <FontAwesomeIcon icon={faHome}/>
+            <Image 
+              style={{'display':"block"}} 
+              src={'/favicon.ico'}
+              alt="logo"
+              fill
+            />
           </Link>
         </div>
         
