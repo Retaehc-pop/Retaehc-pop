@@ -1,4 +1,4 @@
-.main {
+.about {
   position: relative;
   flex-direction: column;
   justify-content: left;
@@ -28,4 +28,25 @@
 }
 .introduction{
   text-align: justify;
+}
+
+.menu {
+  cursor: pointer;
+  margin: 1rem 0;
+  font-size: 3em;
+  width :100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  transition: all ease-in-out 100ms;
+  &:nth-child(n) {
+    padding: 1rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+    text-shadow: 1px;
+  }
 }

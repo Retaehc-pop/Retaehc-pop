@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
+import Hypertext from "../components/hypertext";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { comfortaa } from "../lib/fonts";
 const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -34,28 +36,36 @@ const About = () => {
   }, []);
 
   return (
-    <main className={styles.main} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
+    <main className={styles.about} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
       <p>HI! I'M POP</p>
       <h1 className={comfortaa.className} >Papop Lekhapanyaporn</h1>
       <h2 className={comfortaa.className}>Software Developer</h2>
       <p className={styles.introduction}>
         I'm a self taught developer who is currently studying in Computer science. 
-        I have huge interest in Machine learning, Artificial Intelligent and high performance computing! 
+        I have huge interest in Deep Learning, Quantum Computing and High Performance Computing! 
         </p>
         <p className={styles.introduction}>
-        I'm currently focusing on leaning new things in the computer science area. Beside that, 
+        I'm currently focusing on leaning new things in the computer science area in my university. Beside that, 
         I'm also interested in building some small projects and teach beginner about coding.
         </p>
         <p className={styles.introduction}>
         Coding is my passion and I love to learn new things!
         </p>
-      <div className={styles.button}>
-        <Link href="/resume">Resume <FontAwesomeIcon icon={faFile}/> </Link>
+      <div>
+        <Link className={styles.menu} style={{fontWeight:'700'}} href="/resume" passHref>
+          <Hypertext text={"Resume"}/> 
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
+        <Link className={styles.menu} style={{fontWeight:'700'}} href="/blog" passHref>
+          <Hypertext text={"Blog"}/> 
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
+        <Link className={styles.menu} style={{fontWeight:'700'}} href="/stack" passHref>
+          <Hypertext text={"Stack"}/>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
+
       </div>
-      <div className={styles.button}>
-        <Link href="/blog">Blog <FontAwesomeIcon icon={faComment}/> </Link>
-      </div>
-      
     </main>
   );
 };
