@@ -65,9 +65,9 @@ const Hypertext:React.FC<Prototype> = (props) => {
         height: "100%",
         width: "100%",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "left",
         alignItems: "center",
-        padding: "5%"
+        margin:"0 1em 0 1em"
       }}
       onMouseEnter={() => changeTo(originalText)}
     >
