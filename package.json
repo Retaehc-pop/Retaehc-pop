@@ -37,7 +37,7 @@
     "typescript": "4.9.3"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.5.1",
+    "@svgr/webpack": "^8.1.0",
     "@types/styled-components": "^5.1.26",
     "dotenv-cli": "^7.0.0",
     "prisma": "^4.10.1"
