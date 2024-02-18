@@ -52,16 +52,16 @@ const About = () => {
         Coding is my passion and I love to learn new things!
         </p>
       <div>
-        <Link className={styles.menu} style={{fontWeight:'700'}} href="/resume" passHref>
-          <Hypertext text={"Resume"}/> 
+        <Link className={styles.menu} style={{fontWeight:'400'}} href="/resume" passHref>
+          <Hypertext text={"RESUME"}/> 
           <FontAwesomeIcon icon={faArrowRight} />
         </Link>
-        <Link className={styles.menu} style={{fontWeight:'700'}} href="/blog" passHref>
-          <Hypertext text={"Blog"}/> 
+        <Link className={styles.menu} style={{fontWeight:'400'}} href="/blog" passHref>
+          <Hypertext text={"BLOG"}/> 
           <FontAwesomeIcon icon={faArrowRight} />
         </Link>
-        <Link className={styles.menu} style={{fontWeight:'700'}} href="/stack" passHref>
-          <Hypertext text={"Stack"}/>
+        <Link className={styles.menu} style={{fontWeight:'400'}} href="/stack" passHref>
+          <Hypertext text={"STACK"}/>
           <FontAwesomeIcon icon={faArrowRight} />
         </Link>
 
