@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { montserrat} from "../lib/fonts";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import Logo from "../public/logo.svg";
 export const metadata: Metadata = {
   title: "Papop",
   generator: "Next.js",
@@ -49,15 +50,9 @@ export default function RootLayout({
       <body>
         <div style={{"margin":"0.5em","fontSize":"2em","position":"fixed","width":"50px","height":"50px","cursor":"pointer"}}>
           <Link href={"/"} passHref>
-            <Image 
-              style={{'display':"block"}} 
-              src={'/favicon.ico'}
-              alt="logo"
-              fill
-            />
+            <Logo/>
           </Link>
         </div>
-        
         {children}
         <ContactIcons />
         <footer>
