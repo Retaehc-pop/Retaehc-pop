@@ -13,12 +13,6 @@ async function getAllProjects() {
 }
 
 const Blog = () => {
-  const [projects, setProjects] = useState([]);
-  
-  useEffect(() => {
-    getAllProjects().then((data) => setProjects(data));
-  }
-  , []);
 
   return (
   <main className={comfortaa.className}>
