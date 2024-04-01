@@ -14,7 +14,7 @@ import {
 import Hypertext from "../components/hypertext";
 import { comfortaa, roboto_mono } from "../lib/fonts";
 import ProjectBanner from "../components/projectBanner";
-
+import { motion } from "framer-motion";
 const MONTH = [
   "January",
   "February",
@@ -62,7 +62,7 @@ const Projects = () => {
         <div className={styles.display}>
           {
             highlight ? 
-            <div className={styles.card}>
+            <motion.div layout className={styles.card}>
               <div className={styles.banner}>
                 {highlight.image && (
                   <Image src={highlight.image} alt={highlight.name} fill style={{objectFit:"cover"}}/>
@@ -107,9 +107,9 @@ const Projects = () => {
                 ))
               }
               </div>
-            </div>
+            </motion.div>
             :
-            <div style={{width:"100%",height:"100%",display:"flex",alignItems:"center",justifyContent:"center",position:"relative"}}>
+            <motion.div layout style={{width:"100%",height:"100%",display:"flex",alignItems:"center",justifyContent:"center",position:"relative"}}>
               <div className={styles.card} style={{filter:"blur(1em)",margin:"-1em"}}>
               <div className={styles.banner}>
                 <div className={styles.placeholder}/>
@@ -132,7 +132,7 @@ const Projects = () => {
               </div>
             </div>
             <h3 style={{position:"absolute",color:"var(--color-text-secondary)"}}>Select the project to see more</h3>
-            </div>
+            </motion.div>
           }
         </div>
       </div>

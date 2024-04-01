@@ -4,7 +4,6 @@ import PageBanner from "../components/pageBanner";
 import Home from "../container/home";
 import About from "../container/about";
 import Images from "../container/image";
-import Menu from "../container/menu";
 import Experience from "../container/experience";
 import Projects from "../container/projects";
 import Stack from "../container/stack";
@@ -13,6 +12,9 @@ import { LineButton } from "../components/Button";
 import { useState } from "react";
 import Hypertext from "../components/hypertext";
 import { roboto_mono, comfortaa } from "../lib/fonts";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const useElementOnScreen = (options: any) => {
   const containerRef = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -51,17 +53,18 @@ const Page = () => {
   const [Aboutref, AboutinView]: any = useElementOnScreen(option);
   const [Experienceref, ExperienceinView]: any = useElementOnScreen(option);
   const [Projectref, ProjectinView]: any = useElementOnScreen(option);
-  const [StackRef, StackInView]: any = useElementOnScreen(option);
+  const [Stackref, StackInView]: any = useElementOnScreen(option);
 
   const scrollTo = (ref: any) => {
     ref.current.scrollIntoView();
   };
+
   const refs = [
     { name: "home", ref: Homeref },
     { name: "about", ref: Aboutref },
     { name: "experience", ref: Experienceref },
     { name: "project", ref: Projectref },
-    { name: "stack", ref: StackRef}
+    { name: "stack", ref: Stackref}
   ];
 
   useEffect(() => {
@@ -114,7 +117,20 @@ const Page = () => {
       <div className={styles.quater__page} ref={Experienceref}/>
       <div className={styles.side_by_side} >
           <section>
-            <Menu />
+          <div className={styles.container}>
+              <Link className={styles.menu} style={{fontSize:"2em",fontWeight:'400'}} href="/resume" passHref>
+                <Hypertext text={"RESUME"}/> 
+                <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
+              </Link>
+              <div className={styles.menu} style={{fontSize:"2em",fontWeight:'400'}} onClick={()=>scrollTo(Projectref)}>
+                <Hypertext text={"PROJECT"}/> 
+                <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
+              </div>
+              <div className={styles.menu} style={{fontSize:"2em",fontWeight:'400'}} onClick={()=>scrollTo(Stackref)}>
+                <Hypertext text={"STACK"}/>
+                <FontAwesomeIcon className={styles.arrow}  icon={faArrowRight} />
+              </div>
+          </div>
           </section>
           <section>
             <Experience />
@@ -124,8 +140,8 @@ const Page = () => {
       <div >
         <Projects />
       </div>
-      <div className={styles.quater__page} ref={StackRef}/>
-      <div>
+      <div className={styles.quater__page} />
+      <div ref={Stackref}>
         <Stack />
       </div>
     </div>    

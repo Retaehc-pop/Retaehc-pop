@@ -36,6 +36,7 @@ import OpenCV from "../public/svg/opencv.svg";
 import Rpi from "../public/svg/rpi.svg";
 import Anaconda from "../public/svg/anaconda.svg";
 import CMake from "../public/svg/cmake.svg";
+import { motion } from 'framer-motion';
 
 interface SubstackProps {
     name: string;
@@ -44,14 +45,14 @@ interface SubstackProps {
 
 const SubStack:React.FC<SubstackProps> = ({name, children}) => {
     return (
-            <div className={styles.skill__wrapper}>
+            <motion.div layout className={styles.skill__wrapper}>
               <div className={styles.skill__icon}>
                 {children}
               </div>
               <p className={styles.skill__name}>
                 {name}
               </p>
-            </div>
+            </motion.div>
     );
   }
 
@@ -158,9 +159,19 @@ const Stack = () => {
                 {
                     categories.map((category) => {
                         return (
-                            <div onClick={()=>setStack(category)} key={category.name} style={category.style} className={styles.stack__container}>
+                            <motion.div 
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 }
+                            }}
+                            whileTap={{ scale: 0.9 }}
+
+                            onClick={()=>setStack(category)} 
+                            key={category.name} 
+                            style={category.style} 
+                            className={styles.stack__container}>
                                 <h4 className={styles.stack__title}>{category.name}</h4>
-                            </div>
+                            </motion.div>
                         );
                     })
                 }
