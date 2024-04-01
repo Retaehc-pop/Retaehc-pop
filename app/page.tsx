@@ -3,15 +3,16 @@ import styles from "./Page.module.scss";
 import PageBanner from "../components/pageBanner";
 import Home from "../container/home";
 import About from "../container/about";
-import Projects from "../container/projects";
+import Images from "../container/image";
+import Menu from "../container/menu";
 import Experience from "../container/experience";
+import Projects from "../container/projects";
+import Stack from "../container/stack";
 import { useRef, useEffect } from "react";
 import { LineButton } from "../components/Button";
 import { useState } from "react";
-import Images from "../container/image";
 import Hypertext from "../components/hypertext";
 import { roboto_mono, comfortaa } from "../lib/fonts";
-
 const useElementOnScreen = (options: any) => {
   const containerRef = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -50,6 +51,7 @@ const Page = () => {
   const [Aboutref, AboutinView]: any = useElementOnScreen(option);
   const [Experienceref, ExperienceinView]: any = useElementOnScreen(option);
   const [Projectref, ProjectinView]: any = useElementOnScreen(option);
+  const [StackRef, StackInView]: any = useElementOnScreen(option);
 
   const scrollTo = (ref: any) => {
     ref.current.scrollIntoView();
@@ -59,6 +61,7 @@ const Page = () => {
     { name: "about", ref: Aboutref },
     { name: "experience", ref: Experienceref },
     { name: "project", ref: Projectref },
+    { name: "stack", ref: StackRef}
   ];
 
   useEffect(() => {
@@ -66,7 +69,8 @@ const Page = () => {
     if (AboutinView) setSelectedIndex(1);
     if (ExperienceinView) setSelectedIndex(2);
     if (ProjectinView) setSelectedIndex(3);
-  }, [HomeinView, AboutinView, ProjectinView, ExperienceinView]);
+    if (StackInView) setSelectedIndex(4);
+  }, [HomeinView, AboutinView, ProjectinView, ExperienceinView, StackInView]);
 
   return (
     <div>
@@ -97,30 +101,34 @@ const Page = () => {
       <div ref={Homeref}>
         <Home />
       </div>
-      {/* <div className={styles.half__page} /> */}
-      <div className={styles.quater__page}/>
-      <div className={styles.info}>
-        <section className={styles.about}>
-          <div>
+      <div className={styles.quater__page} ref={Aboutref}/>
+      <div className={styles.side_by_side}>
+        <section>
             <About />
-          </div>
         </section>
-        <section className={styles.information}>
-          <div ref={Aboutref}>
+        <section className={styles.images}>
             <Images />
-          </div>
-          <div ref={Experienceref}>
-            <Experience />
-          </div>
-          <div ref={Projectref}>
-            <Projects />
-          </div>
-          <div className={styles.quater__page} style={{ fontSize: "1.5rem" }}>
-            <Hypertext text="MORE COMING SOON ... " />
-          </div>
         </section>
       </div>
-    </div>
+      {/* <div className={styles.half__page} /> */}
+      <div className={styles.quater__page} ref={Experienceref}/>
+      <div className={styles.side_by_side} >
+          <section>
+            <Menu />
+          </section>
+          <section>
+            <Experience />
+          </section>
+      </div>
+      <div className={styles.quater__page} ref={Projectref}/>
+      <div >
+        <Projects />
+      </div>
+      <div className={styles.quater__page} ref={StackRef}/>
+      <div>
+        <Stack />
+      </div>
+    </div>    
   );
 };
 

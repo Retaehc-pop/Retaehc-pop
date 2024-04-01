@@ -1,48 +1,139 @@
 .card{
   width: 100%;
-  margin: 1em 0em;
+  margin: 1em 0em 0em 0em;
+  color: var(--color-text-secondary);
   display: flex;
+  flex-direction: column;
   transition: all ease-in-out 100ms;
   h4{
     font-size: 1.1rem;
     margin: 0;
+    
+  }
+  @media only screen and (max-width: 992px) and (min-width: 768px) {
+    h4{
+      font-size: 1rem;
+    }
+  } 
+  @media screen and (max-width: 768px) and (min-width: 300px){
+    h4{
+        font-size: 0.8rem;
+    }
   }
   h5{
     font-size: 1rem;
     margin: 0.5em 0em;
   }
-  .date{
-    width:25%;
+  .header{
+    width: 100%;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     white-space: nowrap;
+    // background-color: var(--color-background-secondary);
+    background: linear-gradient(to right, var(--color-background-secondary) 0%, var(--color-background-tritary)  51%, var(--color-background-secondary) 100%);
+    border-radius: 10px;
+    .date{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5em 0.5em;
+    }
+    &:hover{
+      cursor: pointer;
+      background-position: right center;
+    }
+    @media only screen and (max-width: 992px) and (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 0.2em 0.2em;
+      .date{
+        padding: 0.2em 0.2em;
+      
+      }
+    } 
+    @media screen and (max-width: 768px) and (min-width: 300px){
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0.2em 0.2em;
+      .date{
+        padding: 0.2em 0.2em;
+      
+      }
+    }
+    
   }
   .info{
-    width:75%;
+    margin-top: 1em;
+    border-radius: 10px;
+    background-color: var(--color-background-tritary) ;
+    transition: all ease-in-out 200ms;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .description{
+      width: 80%;
+      ul{
+        padding: 0;
+      }
+      li{
+        list-style-type: disc;
+      }
+    }
+    .image{
+      position: relative;
+      // width: 20%;
+      height: 80%;
+      aspect-ratio: 1/1;
+
+    }
   }
-  @media screen and (max-width:768px){
-    flex-direction: column;
-    h4{
-      font-size: 1rem;
+  .open{
+    height: 10em; 
+    padding: 1em;
+    opacity: 1;
+    transition: all ease-in-out 200ms;
+    .description{
+      // display: block;
+      padding: 1em;
     }
-    h5{
-      font-size: 0.9rem;
-    }
-    .date{
-      width: 100%;
-      margin:1rem 0rem;
-    }
-    .info{
-      width: 100%;
+  }
+  .close{
+    height: 0;
+    padding: 0em;
+    opacity: 0;
+    transition: all ease-in-out 200ms;
+    .description{
+      // display: none;
+      padding: 0em;
     }
   }
 
 }
 .main{
   min-height: 70vh;
-  height: 70vh;
+  align-items: flex-start;
+  // height: 70vh;
 }
 
 .wrapper{
-  width: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media screen and (max-width:1200px) and (min-width: 992px){
+    width: 90%;
+  }
+  @media screen and (max-width: 992px) and (min-width: 768px){
+    width: 90%;
+  }
+  @media screen and (max-width: 768px) and (min-width: 300px){
+    width: 100%;
+  }
 }
 
 // .wrapper:hover > .card{

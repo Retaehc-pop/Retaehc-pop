@@ -13,14 +13,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { comfortaa } from "../lib/fonts";
 const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [images, setImages] = useState([
-    "/profile.jpg",
-    "/profile.jpg",
-    "/profile.jpg",
-  ]);
-  const OPTIONS: EmblaOptionsType = {
-    loop: true,
-  };
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({
@@ -36,7 +28,7 @@ const About = () => {
   }, []);
 
   return (
-    <main className={styles.about} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
+    <div className={styles.about} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
       <p>HI! I'M POP</p>
       <h1 className={comfortaa.className} >Papop Lekhapanyaporn</h1>
       <h2 className={comfortaa.className}>Software Developer</h2>
@@ -51,22 +43,7 @@ const About = () => {
         <p className={styles.introduction}>
         Coding is my passion and I love to learn new things!
         </p>
-      <div>
-        <Link className={styles.menu} style={{fontWeight:'400'}} href="/resume" passHref>
-          <Hypertext text={"RESUME"}/> 
-          <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
-        <Link className={styles.menu} style={{fontWeight:'400'}} href="/blog" passHref>
-          <Hypertext text={"BLOG"}/> 
-          <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
-        <Link className={styles.menu} style={{fontWeight:'400'}} href="/stack" passHref>
-          <Hypertext text={"STACK"}/>
-          <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
-
-      </div>
-    </main>
+    </div>
   );
 };
 export default About;

@@ -6,6 +6,12 @@
   --font-monospace: var(--font-roboto-mono), monospace;
   --font-sans: var(--font-montserrat), sans-serif;
   --font-cursive: var(--font-comfortaa);
+  --color-purple:#c6a0f6;
+  --color-blue:#8aadf4;
+  --color-green:#a6da95;
+  --color-yellow:#eed49f;
+  --color-orange:#f5a97f;
+  --color-red:#ed8796;
 }
 html[data-theme='light'] {
   --color-text: #3B4252;
@@ -15,11 +21,7 @@ html[data-theme='light'] {
   --color-background-tritary: #4C566A;
   --color-icon: #2E3440;
   --color-line: #434C5E;
-  --color-red:#BF616A;
-  --color-orange:#D08770;
-  --color-yellow:#EBCB8B;
-  --color-green:#A3BE8C;
-  --color-purple:#B48EAD;
+
 }
 html[data-theme='dark'] {
   --color-text: #ECEFF4;
@@ -29,11 +31,6 @@ html[data-theme='dark'] {
   --color-background-tritary: #8b9ab9;
   --color-icon: #bbc0cc;
   --color-line: #EFEFEF;
-  --color-red:#BF616A;
-  --color-orange:#D08770;
-  --color-yellow:#EBCB8B;
-  --color-green:#A3BE8C;
-  --color-purple:#B48EAD;
 }
 html,
 body {
@@ -66,43 +63,43 @@ li {
 }
 h1{
   font-size: 3rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 2rem;
   }
 }
 h2{
   font-size: 2rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 1rem;
   }
 }
 h3{
   font-size: 1.5rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 0.9rem;
   }
 }
 h4{
   font-size: 1rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 0.5rem;
   }
 }
 h5{
   font-size: 0.8rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 0.4rem;
   }
 }
 h6{
   font-size: 0.6rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 0.3rem;
   }
 }
 p{
   font-size: 1rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 300px){
     font-size: 0.8rem;
   }
 }

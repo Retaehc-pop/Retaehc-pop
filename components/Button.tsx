@@ -38,7 +38,6 @@ export const PrevButton: React.FC<PrevNextButtonPropType> = (props) => {
   return (
     <button
       className={`${styles.button} ${styles.buttonPrev}`}
-      // className="embla__button embla__button--prev"
       onClick={onClick}
       disabled={!enabled}
     >

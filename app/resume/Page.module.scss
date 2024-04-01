@@ -1,7 +1,7 @@
 .container{
   position: relative;
   display: flex;
-  // flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 5% 10%;
@@ -15,6 +15,7 @@
     background-color: var(--color-text);
     border: 1px solid var(--color-text);
     padding: 0.5em 1em;
+    margin: 1em;
     border-radius: 0.5em;
     transition: all ease-in-out 100ms;
     &:hover{
@@ -22,5 +23,8 @@
       background-color: var(--color-background);
       border: 1px solid var(--color-text);
     }
+  }
+  @media screen and (max-width: 768px) and (min-width: 300px){
+    flex-direction: column;
   }
 }
