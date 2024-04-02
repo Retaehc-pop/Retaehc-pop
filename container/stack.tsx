@@ -165,6 +165,48 @@ const Stack = () => {
             ]
         },
         {
+            name: "Data Science",
+            style: {
+                background: "linear-gradient(45deg, var(--color-blue) 0%, rgba(255,255,255,255) 100%)"
+            },
+            stack:[{
+                name: "Tensorflow",
+                icon: <Tensorflow/>
+            },
+            {
+                name: "Keras",
+                icon: <Keras/>
+            },
+            {
+                name: "Pytorch",
+                icon: <Pytorch/>
+            },
+            {
+                name: "Numpy",
+                icon: <Numpy/>
+            },
+            {
+                name: "Matplotlib",
+                icon: <Matplotlib/>
+            },
+            {
+                name: "Plotly",
+                icon: <Plotly/>
+            },
+            {
+                name: "Pandas",
+                icon: <Pandas/>
+            },
+            {
+                name: "Scikit",
+                icon: <Scikit/>
+            },
+            {
+                name: "Jupyter",
+                icon: <Jupyter/>
+            }]
+        },
+        {
             name: "Computing",
             style: {
                 background: "linear-gradient(45deg, var(--color-orange) 0%, rgba(255,255,255,255) 100%)"
@@ -209,48 +251,7 @@ const Stack = () => {
                 icon: <Yarn/>
             }]
         },
-        {
-            name: "Data Science",
-            style: {
-                background: "linear-gradient(45deg, var(--color-blue) 0%, rgba(255,255,255,255) 100%)"
-            },
-            stack:[{
-                name: "Tensorflow",
-                icon: <Tensorflow/>
-            },
-            {
-                name: "Keras",
-                icon: <Keras/>
-            },
-            {
-                name: "Pytorch",
-                icon: <Pytorch/>
-            },
-            {
-                name: "Numpy",
-                icon: <Numpy/>
-            },
-            {
-                name: "Matplotlib",
-                icon: <Matplotlib/>
-            },
-            {
-                name: "Plotly",
-                icon: <Plotly/>
-            },
-            {
-                name: "Pandas",
-                icon: <Pandas/>
-            },
-            {
-                name: "Scikit",
-                icon: <Scikit/>
-            },
-            {
-                name: "Jupyter",
-                icon: <Jupyter/>
-            }]
-        },
+        
         {
             name: "Embedded System",
             style: {
