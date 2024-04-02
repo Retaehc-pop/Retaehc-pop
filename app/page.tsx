@@ -15,6 +15,8 @@ import { roboto_mono, comfortaa } from "../lib/fonts";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 const useElementOnScreen = (options: any) => {
   const containerRef = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -55,6 +57,17 @@ const Page = () => {
   const [Projectref, ProjectinView]: any = useElementOnScreen(option);
   const [Stackref, StackInView]: any = useElementOnScreen(option);
 
+  const resumeRef = useRef(null);
+  const resumeIsInView = useInView(resumeRef);
+  // const resumeIsInView = useInView(resumeRef,{ once: true });
+
+  const projectRef = useRef(null);
+  const projectIsInView = useInView(resumeRef);
+  // const projectIsInView = useInView(resumeRef,{ once: true });
+
+  const stackRef = useRef(null);
+  // const stackIsInView = useInView(resumeRef,{ once: true });
+  const stackIsInView = useInView(resumeRef);
   const scrollTo = (ref: any) => {
     ref.current.scrollIntoView();
   };
@@ -118,15 +131,15 @@ const Page = () => {
       <div className={styles.side_by_side} >
           <section>
           <div className={styles.container}>
-              <Link className={styles.menu} style={{fontSize:"2em",fontWeight:'400'}} href="/resume" passHref>
+              <Link className={styles.menu} ref={resumeRef} style={{transform: resumeIsInView ? "none":"translateX(-100%)",opacity: resumeIsInView?1:0}} href="/resume" passHref>
                 <Hypertext text={"RESUME"}/> 
                 <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
               </Link>
-              <div className={styles.menu} style={{fontSize:"2em",fontWeight:'400'}} onClick={()=>scrollTo(Projectref)}>
+              <div className={styles.menu} ref={projectRef} style={{transform: projectIsInView ? "none":"translateX(-100%)",opacity: projectIsInView?1:0}}onClick={()=>scrollTo(Projectref)}>
                 <Hypertext text={"PROJECT"}/> 
                 <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
               </div>
-              <div className={styles.menu} style={{fontSize:"2em",fontWeight:'400'}} onClick={()=>scrollTo(Stackref)}>
+              <div className={styles.menu} ref={stackRef} style={{transform: stackIsInView ? "none":"translateX(-100%)",opacity: stackIsInView?1:0}} onClick={()=>scrollTo(Stackref)}>
                 <Hypertext text={"STACK"}/>
                 <FontAwesomeIcon className={styles.arrow}  icon={faArrowRight} />
               </div>

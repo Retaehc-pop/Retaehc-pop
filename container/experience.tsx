@@ -8,10 +8,14 @@ import { comfortaa, montserrat, roboto_mono} from '../lib/fonts';
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, useCycle } from 'framer-motion';
-
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 const ExperienceCard = (info:any) => {
   const {title,title2, from, to, description,logo} = info;
   const [isOpen, toggleOpen] = useCycle(false,true);
+  const containerRef = useRef(null);
+  // const isInView = useInView(containerRef, {once: true })
+  const isInView = useInView(containerRef)
   const variants = {
     open:{
         scale:1,
@@ -26,11 +30,12 @@ const ExperienceCard = (info:any) => {
   };
 
   return (
-    <motion.div layout initial={false} className={styles.card} animate={isOpen ? "open" : "closed"}>
+    <motion.div layout initial={false} ref={containerRef} style={{transform: isInView ? "none":"translateX(100%)",opacity: isInView?1:0,transition:"all 1s cubic-bezier(0.17, 0.55, 0.55, 1)"}} className={styles.card} animate={isOpen ? "open" : "closed"}>
       <motion.div 
         layout
         className={`${styles.header} ${roboto_mono.className}`} 
         onClick={() => toggleOpen()}
+        
          >
         <h4>{title2} @ {title}</h4>
         <motion.div layout className={styles.date}>

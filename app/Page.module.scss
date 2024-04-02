@@ -35,6 +35,7 @@
       display: none;
     } 
   }
+  
 }
 .side_by_side{
   width: 100%;
@@ -110,7 +111,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  transition: all ease-in-out 200ms;
+  transition: all 1s cubic-bezier(0.17, 0.55, 0.55, 1);
+  font-size:"2em";
+  font-weight:'400';
   .arrow{
       opacity: 0;
   }

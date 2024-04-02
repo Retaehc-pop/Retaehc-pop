@@ -15,6 +15,9 @@ import Hypertext from "../components/hypertext";
 import { comfortaa, roboto_mono } from "../lib/fonts";
 import ProjectBanner from "../components/projectBanner";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useCycle,useInView} from "framer-motion";
+
 const MONTH = [
   "January",
   "February",
@@ -39,6 +42,40 @@ async function getAllProjects() {
 const Projects = () => {
   const [projects, setProjects] = useState<projectWithInfo[]>();
   const [highlight, setHighlight] = useState<projectWithInfo>();
+  const projectRef = useRef(null);
+  const isInView = useInView(projectRef,{once:true});
+
+  const containerVariants = {
+    open: {
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+    closed: {
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    open: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 1,
+      },
+    },
+    closed: {
+      opacity: 0,
+      y: "100%",
+      scale: 0,
+    },
+  };
 
   useEffect(() => {
     getAllProjects().then((projects) => {
@@ -49,16 +86,22 @@ const Projects = () => {
   return (
     <main className={styles.main}>
       <div className={styles.side_by_side}>
-        <div className={styles.wrapper}>
+        <motion.div 
+        layout
+        initial={false}
+        animate={isInView ? "open" : "closed"}
+        variants={containerVariants}
+        ref={projectRef} 
+        className={styles.wrapper}>
         {projects ?
           projects.map((project) => (
-            <div key={project.id} onClick={()=>setHighlight(project)}>
+            <motion.div variants={itemVariants} key={project.id} onClick={()=>setHighlight(project)}>
               <ProjectBanner project={project} />
-            </div>
+            </motion.div>
           )):
           <p style={{fontWeight:'400'}}>loading...</p>
         }
-        </div>
+        </motion.div>
         <div className={styles.display}>
           {
             highlight ? 
