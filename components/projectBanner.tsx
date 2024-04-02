@@ -42,8 +42,8 @@ const ProjectBanner = ({ project }: { project: projectWithInfo }) => {
         className={styles.project__info}
         style={
           project.image
-            ? { color: "var(--color-background)" }
-            : { color: "var(--color-text)" }
+            ? { color: "#ECEFF4" }
+            : { color: "var(--color-background-secondary)" }
         }
       >
         <p className={`${styles.project__date} ${roboto_mono.className}`}>
