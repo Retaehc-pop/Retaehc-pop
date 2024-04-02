@@ -1,4 +1,5 @@
 'use client'
+
 import styles from './Experience.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
@@ -6,34 +7,54 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { comfortaa, montserrat, roboto_mono} from '../lib/fonts';
 import { useState } from 'react';
 import Image from 'next/image';
-import { Roboto } from 'next/font/google';
+import { motion, useCycle } from 'framer-motion';
+
 const ExperienceCard = (info:any) => {
   const {title,title2, from, to, description,logo} = info;
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, toggleOpen] = useCycle(false,true);
+  const variants = {
+    open:{
+        scale:1,
+        height: "min-content",
+        // margin: "1em 0em",
+    },
+    closed: {
+        scale:0,
+        height:0,
+        // margin: 0,
+    }
+  };
 
   return (
-    <div className={styles.card}>
-      <div className={`${styles.header} ${roboto_mono.className}`} >
+    <motion.div layout initial={false} className={styles.card} animate={isOpen ? "open" : "closed"}>
+      <motion.div 
+        layout
+        className={`${styles.header} ${roboto_mono.className}`} 
+        onClick={() => toggleOpen()}
+         >
         <h4>{title2} @ {title}</h4>
-        <div className={styles.date}>
+        <motion.div layout className={styles.date}>
           <h4>{from} - {to}</h4>
-          <FontAwesomeIcon style={{margin:"0.2em"}}icon={isOpen? faMinus:faPlus} onClick={() => setIsOpen(!isOpen)} />
-        </div>
-      </div>
-      <div className={`${styles.info} ${isOpen? styles.open:styles.close} ${comfortaa.className}`}>
-        <div className={styles.description}>
-        <ul>
-        {
-          Array.isArray(description)? description.map((d:any) => <li key={d}><p>{d}</p></li>):<p>{description}</p>
-        }
-        </ul>
-        </div>
-        <div className={styles.image}>
-          <Image src={logo} alt="logo" fill/>
-          </div>
-      </div>
-    </div>
+          <FontAwesomeIcon style={{margin:"0.2em"}} icon={isOpen? faMinus:faPlus}  />
+        </motion.div>
+      </motion.div>
+      <motion.div layout variants={variants} 
+        className={`${styles.info} ${comfortaa.className}`}>
+          <motion.div 
+          // variants={variants2} 
+          layout 
+          className={styles.description}>
+            <motion.ul layout>
+            {
+              Array.isArray(description)? description.map((d:any) => <motion.li key={d}><p>{d}</p></motion.li>):<p>{description}</p>
+            }
+            </motion.ul>
+          </motion.div>
+          <motion.div layout className={styles.image}>
+            <Image src={logo} alt="logo" fill/>
+          </motion.div>
+      </motion.div>
+    </motion.div>
   );
 
 }
@@ -78,17 +99,17 @@ const Experience = () => {
     description:['GPA 3.6 / 4.0', 'President of Assumption College Interact Club', 'Vice president of Interact 3350 District','Head of COM Cheer']
   }
   return (
-    <main className={styles.main}>
-      <div className={styles.wrapper}>
+    <main  className={styles.main}>
+      <motion.div layout className={styles.wrapper}>
         <h2 className={comfortaa.className}>Work</h2>
-      <ExperienceCard {...rcp}/>
-      <ExperienceCard {...spaceac}/>
-      </div>
-      <div className={styles.wrapper}>
-      <h2 className={comfortaa.className}>Education</h2>
-      <ExperienceCard {...rwth}/>
-      <ExperienceCard {...assumption}/>
-      </div>
+        <ExperienceCard {...rcp}/>
+        <ExperienceCard {...spaceac}/>
+      </motion.div>
+      <motion.div layout  className={styles.wrapper}>
+        <h2 className={comfortaa.className}>Education</h2>
+        <ExperienceCard {...rwth}/>
+        <ExperienceCard {...assumption}/>
+      </motion.div>
     </main>
   );
 }

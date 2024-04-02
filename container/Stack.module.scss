@@ -6,7 +6,6 @@
     position: relative;
     @media screen and (max-width: 768px) and (min-width: 300px){
         flex-direction: column-reverse;
-        
     }
     
 }
@@ -17,6 +16,10 @@
   justify-content: center;
   // display: grid;
   // grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 768px) and (min-width: 300px){
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
   gap: 1em;
   width: 100%;
   height: 100%;
@@ -39,7 +42,20 @@
     margin: 0;
   }
 }
+.stack_2{
+  width:40%;
+  @media screen and (max-width: 768px) and (min-width: 300px){
+    width: 100%;
+    
+  }
+  @media screen and (max-width: 992px) and (min-width: 768px){
+    width: 45%;
+  }
+}
 .substack{
+  @media screen and (max-width: 992px) and (min-width: 768px){
+    width: 100%;
+  }
   .substack__container{
     width: 100%;
     border-radius: 5px;
@@ -50,6 +66,10 @@
     grid-template-columns: repeat(4, auto);
     place-items: center;
     gap: 1em;
+    @media screen and (max-width: 992px) and (min-width: 768px){
+      // display: none;
+      gap: 0.3em;
+    }
     .skill__wrapper{
       border: 2px solid var(--color-background-tritary);
       display: flex;
@@ -59,12 +79,23 @@
       // padding: 0em 0.5em;
       border-radius: 0.3em;
       margin: 0.5em 0;
+      @media screen and (max-width: 768px) and (min-width: 300px){
+        // margin: 0.5em 0.2em;
+      }
       .skill__name{
           margin: 0.5em;
           font-weight: 800;
           font-size: 1em;
           color: var(--color-background);
-        }
+          @media screen and (max-width: 768px) and (min-width: 300px){
+            // display: none;
+            font-size: 0.4em;
+          }
+          @media screen and (max-width: 992px) and (min-width: 768px){
+            // display: none;
+            font-size: 0.4em;
+          }
+      }
       .skill__icon{
         margin: 0.5em;
         width: 2em;
@@ -72,6 +103,13 @@
         font-size: 1em;
         display: grid;
         place-items: center;
+        @media screen and (max-width: 768px) and (min-width: 300px){
+          margin: 0.1em;
+        }
+        @media screen and (max-width: 768px) and (min-width: 300px){
+          width: 1.5em;
+          height: 1.5em;
+        }
       }
     }
   }

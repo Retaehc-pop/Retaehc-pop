@@ -315,7 +315,7 @@ const Stack = () => {
             <motion.div layout className={styles.stack}>
                 {
                     categories.map((category) => (
-                        <div style={{width:"40%",}} key={category.name}>
+                        <div className={styles.stack_2} key={category.name}>
                             <SubStack name={category.name}>
                                 {
                                     category.stack.map((skill) => (
