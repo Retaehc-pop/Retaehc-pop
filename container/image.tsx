@@ -6,13 +6,14 @@ import Image from "next/image";
 
 const Images = () => {
   const [images, setImages] = useState([
-    "/profile/profile.jpg",
+    //"/profile/profile.jpg",
     "/profile/profile2.jpg",
     // "/profile/profile3.jpg",
   ]);
   const OPTIONS: EmblaOptionsType = {
     loop: true,
   };
+
 
   return (
     <div className={styles.image_container}>

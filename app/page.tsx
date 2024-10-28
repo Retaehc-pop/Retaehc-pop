@@ -131,7 +131,7 @@ const Page = () => {
       <div className={styles.side_by_side} >
           <section>
           <div className={styles.container}>
-              <Link className={styles.menu} ref={resumeRef} style={{transform: resumeIsInView ? "none":"translateX(-100%)",opacity: resumeIsInView?1:0}} href="/resume" passHref>
+              <Link className={styles.menu} ref={resumeRef} style={{transform: resumeIsInView ? "none":"translateX(-100%)",opacity: resumeIsInView?1:0}} href="/resume.pdf" passHref>
                 <Hypertext text={"RESUME"}/> 
                 <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
               </Link>
