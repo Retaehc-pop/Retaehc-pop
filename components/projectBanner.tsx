@@ -27,24 +27,18 @@ const MONTH = [
 
 const ProjectBanner = ({ project }: { project: projectWithInfo }) => {
   return (
-    <div className={styles.project}>
+    <Link className={styles.project} href={project.url ? project.url : ""} >
       <div className={styles.project__image}>
-        {project.image && (
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        )}
+        <Image
+          src={project.image ? project.image : ""}
+          alt={project.image ? project.name : ""}
+          fill
+          style={{ objectFit: "cover" }}
+        />
       </div>
       <div
         className={styles.project__info}
-        style={
-          project.image
-            ? { color: "#ECEFF4" }
-            : { color: "var(--color-background-secondary)" }
-        }
+        style={{ color: "#ECEFF4" }}
       >
         <p className={`${styles.project__date} ${roboto_mono.className}`}>
           {MONTH[new Date(project.date).getMonth()]}{" "}
@@ -58,12 +52,11 @@ const ProjectBanner = ({ project }: { project: projectWithInfo }) => {
             </Link>
           )}
         </h1>
-        {/* <p className={styles.project__description}>{project.description}</p> */}
         <div className={styles.project__links}>
           <div className={styles.project__tags}>
             {project.tags &&
               project.tags.map((tag: any) => (
-                <p key={tag.id} style={{fontWeight:'400'}} className={styles.project__tag}>
+                <p key={tag.id} style={{ fontWeight: '400' }} className={styles.project__tag}>
                   {tag.name}
                 </p>
               ))}
@@ -76,16 +69,13 @@ const ProjectBanner = ({ project }: { project: projectWithInfo }) => {
             )}
           </div>
         </div>
+        <p className={styles.project__description}>{project.description}</p>
         <div
           className={styles.project__line}
-          style={
-            project.image
-              ? { backgroundColor: "var(--color-background)" }
-              : { backgroundColor: "var(--color-text)" }
-          }
+          style={{ backgroundColor: "var(--color-background)" }}
         ></div>
       </div>
-    </div>
+    </Link>
   );
 };
 

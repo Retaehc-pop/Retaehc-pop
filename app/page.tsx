@@ -17,6 +17,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+
+
 const useElementOnScreen = (options: any) => {
   const containerRef = useRef<any>(null);
   const [isVisible, setIsVisible] = useState(false);
