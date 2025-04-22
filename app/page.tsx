@@ -76,8 +76,6 @@ const Page = () => {
     { name: "home", ref: Homeref },
     { name: "about", ref: Aboutref },
     { name: "experience", ref: Experienceref },
-    { name: "project", ref: Projectref },
-    { name: "stack", ref: Stackref}
   ];
 
   useEffect(() => {
@@ -117,47 +115,48 @@ const Page = () => {
       <div ref={Homeref}>
         <Home />
       </div>
-      <div className={styles.quater__page} ref={Aboutref}/>
+      <div className={styles.quater__page} ref={Aboutref} />
       <div className={styles.side_by_side}>
         <section>
-            <About />
+          <About />
         </section>
         <section className={styles.images}>
-            <Images />
+          <Images />
         </section>
       </div>
       {/* <div className={styles.half__page} /> */}
-      <div className={styles.quater__page} ref={Experienceref}/>
+      <div className={styles.quater__page} ref={Experienceref} />
       <div className={styles.side_by_side} >
-          <section>
+        <section style={{ position: "sticky", top: "50%", transform: "translateY(-50%)" }}>
           <div className={styles.container}>
-              <Link className={styles.menu} ref={resumeRef} style={{transform: resumeIsInView ? "none":"translateX(-100%)",opacity: resumeIsInView?1:0}} href="/resume.pdf" passHref>
-                <Hypertext text={"RESUME"}/> 
-                <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
-              </Link>
-              <div className={styles.menu} ref={projectRef} style={{transform: projectIsInView ? "none":"translateX(-100%)",opacity: projectIsInView?1:0}}onClick={()=>scrollTo(Projectref)}>
-                <Hypertext text={"PROJECT"}/> 
-                <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
-              </div>
-              <div className={styles.menu} ref={stackRef} style={{transform: stackIsInView ? "none":"translateX(-100%)",opacity: stackIsInView?1:0}} onClick={()=>scrollTo(Stackref)}>
-                <Hypertext text={"STACK"}/>
-                <FontAwesomeIcon className={styles.arrow}  icon={faArrowRight} />
-              </div>
+            <Link className={styles.menu} ref={resumeRef} style={{ transform: resumeIsInView ? "none" : "translateX(-100%)", opacity: resumeIsInView ? 1 : 0 }} href="https://raw.githubusercontent.com/Retaehc-pop/RESUME/master/resume.pdf" passHref>
+              <Hypertext text={"RESUME"} />
+              <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
+            </Link>
+            <Link className={styles.menu} ref={projectRef} style={{ transform: projectIsInView ? "none" : "translateX(-100%)", opacity: projectIsInView ? 1 : 0 }} href="/project">
+              <Hypertext text={"PROJECT"} />
+              <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
+            </Link>
+            <Link className={styles.menu} ref={stackRef} style={{ transform: stackIsInView ? "none" : "translateX(-100%)", opacity: stackIsInView ? 1 : 0 }} href="/blog">
+              <Hypertext text={"BLOG"} />
+              <FontAwesomeIcon className={styles.arrow} icon={faArrowRight} />
+            </Link>
           </div>
-          </section>
-          <section>
-            <Experience />
-          </section>
-      </div>
-      <div className={styles.quater__page} ref={Projectref}/>
-      <div >
-        <Projects />
+        </section>
+        <section>
+          <Experience />
+        </section>
       </div>
       <div className={styles.quater__page} />
-      <div ref={Stackref}>
-        <Stack />
-      </div>
-    </div>    
+      {/* <div className={styles.quater__page} ref={Projectref} /> */}
+      {/* <div > */}
+      {/*   <Projects /> */}
+      {/* </div> */}
+      {/* <div className={styles.quater__page} /> */}
+      {/* <div ref={Stackref}> */}
+      {/*   <Stack /> */}
+      {/* </div> */}
+    </div>
   );
 };
 

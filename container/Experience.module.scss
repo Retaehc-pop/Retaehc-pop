@@ -1,7 +1,6 @@
 .card{
   width: 100%;
   margin: 1em 0em 0em 0em;
-  color: var(--color-text-secondary);
   display: flex;
   flex-direction: column;
   transition: all ease-in-out 100ms;
@@ -26,14 +25,11 @@
   }
   .header{
     width: 100%;
-    padding: 0.5em 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
-    background-color: var(--color-background-secondary);
-    // background: linear-gradient(to right, var(--color-background-secondary) 0%, var(--color-background-tritary)  51%, var(--color-background-secondary) 100%);
     border-radius: 10px;
     .date{
       display: flex;
@@ -63,11 +59,6 @@
     
   }
   .info{
-    margin-top: 1em;
-    
-    border-radius: 10px;
-    background-color: var(--color-background-tritary) ;
-    padding: 0 1em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

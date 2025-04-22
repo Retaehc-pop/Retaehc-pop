@@ -28,21 +28,22 @@ const About = () => {
   }, []);
 
   return (
-    <div className={styles.about} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}>
+    <div className={styles.about} >
+      {/* <div className={styles.about} style={{transform:`translate(${mousePos.x * 0.02}px,${mousePos.y * 0.02}px)`}}> */}
       <p>HI! I'M POP</p>
       <h1 className={comfortaa.className} >Papop Lekhapanyaporn</h1>
       <h2 className={comfortaa.className}>Software Developer</h2>
       <p className={styles.introduction}>
-        I'm a self taught developer who is currently studying in Computer science. 
-        I have huge interest in Deep Learning, Quantum Computing and High Performance Computing! 
-        </p>
-        <p className={styles.introduction}>
-        I'm currently focusing on leaning new things in the computer science area in my university. Beside that, 
+        I'm a self taught developer who is currently studying in Computer science.
+        I have huge interest in High Performance Computing and Distributed system!
+      </p>
+      <p className={styles.introduction}>
+        I'm currently focusing on leaning new things in the computer science area in my university. Beside that,
         I'm also interested in building some small projects and teach beginner about coding.
-        </p>
-        <p className={styles.introduction}>
+      </p>
+      <p className={styles.introduction}>
         Coding is my passion and I love to learn new things!
-        </p>
+      </p>
     </div>
   );
 };
