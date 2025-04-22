@@ -129,7 +129,7 @@ const Page = () => {
       {/* <div className={styles.half__page} /> */}
       <div className={styles.quater__page} ref={Experienceref} />
       <div className={styles.side_by_side} >
-        <section style={{ position: "sticky", top: "50%", transform: "translateY(-50%)" }}>
+        <section className={styles.menulist} >
           <div className={styles.container}>
             <Link className={styles.menu} ref={resumeRef} style={{ transform: resumeIsInView ? "none" : "translateX(-100%)", opacity: resumeIsInView ? 1 : 0 }} href="https://raw.githubusercontent.com/Retaehc-pop/RESUME/master/resume.pdf" passHref>
               <Hypertext text={"RESUME"} />

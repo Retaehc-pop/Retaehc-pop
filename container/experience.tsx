@@ -81,7 +81,11 @@ const Experience = () => {
     title2: 'Working student',
     from: '2023',
     to: 'Present',
-    description: ['E-perscription & TI Requirement engineer', 'Automated data visualization and analysis of e-prescription data', 'Automated E-Insurance card data extraction and testing']
+    description: [
+      'Developed automation tools to monitor and report frequent updates from Gematik regarding E-prescription requirements and structure, while automating daily and monthly reminder for key events, keeping the team informed and reduce manual effort',
+      'Created tools for data refactoring and bulk editing of E-prescriptions, including type conversion and field modification–streamlining test case generation and accelerating development process',
+      'Create a script to extract and process information from the E-Health card data from the terminal device, convert it to a dedicated format and pass along to the team to use in testing and validation workflows'
+    ]
   }
   const rwth = {
     logo: "/experience/rwth.png",
@@ -89,15 +93,15 @@ const Experience = () => {
     title2: 'B.SC Computer Science',
     from: '2022',
     to: 'Present',
-    description: ['Expected Graduation 2025', 'Study focus on HPC']
+    description: ['Expected Graduation 2025', 'Thesis : Evaluating Automated Memory Management Strategies for Heterogeneous Architectures using Microbenchmarking']
   }
   const assumption = {
     logo: "/experience/assumption.png",
     title: 'Assumption College',
-    title2: 'Science Engineering degree',
+    title2: 'Highschool',
     from: '2019',
     to: '2022',
-    description: ['GPA 3.6 / 4.0', 'President of Assumption College Interact Club', 'Vice president of Interact 3350 District', 'Head of COM Cheer']
+    description: ['GPA 3.6 / 4.0', 'President of Assumption College Interact Club', 'Head of COM department Cheer team']
   }
   return (
     <main className={styles.main}>

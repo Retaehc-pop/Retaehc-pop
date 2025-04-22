@@ -1,0 +1,30 @@
+.page{
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  .imageBanner {
+      position: relative;
+      width: 50%;
+      height: 10em;
+      background-color: rgba(212, 210, 210,1);
+  }
+
+  .title{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    
+  }
+  .info{
+    // color: red;
+    .links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

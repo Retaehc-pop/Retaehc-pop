@@ -8,6 +8,7 @@ import styles from './Page.module.scss'
 import { comfortaa } from "../../lib/fonts";
 import { projectWithInfo } from "../../lib/prisma";
 import ProjectBanner from "../../components/projectBanner";
+
 async function getAllProjects() {
   const res = await fetch(`../api/projects`);
   const data = await res.json();
@@ -16,25 +17,25 @@ async function getAllProjects() {
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
-  
+
   useEffect(() => {
     getAllProjects().then((data) => setProjects(data));
-  },[]);
+  }, []);
 
   return (
-  <main className={comfortaa.className}>
-    <div className={styles.quater__page}>
-      <h1>Project</h1>
-    </div>
-    <div className={styles.wrapper}>
-      {projects ?
-        projects.map((project:projectWithInfo) => (
-          <ProjectBanner key={project.id} project={project} />
-        )):
-        <p style={{fontWeight:'400'}}>loading...</p>
-      }
+    <main className={comfortaa.className}>
+      <div className={styles.quater__page}>
+        <h1>Project</h1>
       </div>
-  </main>
+      <div className={styles.wrapper}>
+        {projects ?
+          projects.map((project: projectWithInfo) => (
+            <ProjectBanner key={project.id} project={project} />
+          )) :
+          <p style={{ fontWeight: '400' }}>loading...</p>
+        }
+      </div>
+    </main>
   );
 };
 

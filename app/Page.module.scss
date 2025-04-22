@@ -103,6 +103,26 @@
   width: 50%;
 }
 
+.menulist{
+  position: sticky; 
+  top: 50%;
+  transform: translateY(-50%);
+  @media screen and (max-width: 1200px) and (min-width: 300px){
+    position: relative;
+    top: 0;
+    transform:translateY(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container{
+      position: relative;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+  }
+}
+
 .menu {
   cursor: pointer;
   margin: 1rem 0;

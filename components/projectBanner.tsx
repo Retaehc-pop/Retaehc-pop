@@ -27,7 +27,8 @@ const MONTH = [
 
 const ProjectBanner = ({ project }: { project: projectWithInfo }) => {
   return (
-    <Link className={styles.project} href={project.url ? project.url : ""} >
+    <Link className={styles.project} href="">
+      {/* <Link className={styles.project} href={`/project/${project.name}`} > */}
       <div className={styles.project__image}>
         <Image
           src={project.image ? project.image : ""}
@@ -75,7 +76,7 @@ const ProjectBanner = ({ project }: { project: projectWithInfo }) => {
           style={{ backgroundColor: "var(--color-background)" }}
         ></div>
       </div>
-    </Link>
+    </Link >
   );
 };
 

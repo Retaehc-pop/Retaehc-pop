@@ -3,10 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider          = "postgresql"
-  // url      = env("DATABASE_URL") 
-  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model Project {
@@ -17,24 +16,27 @@ model Project {
   hilight      Boolean      @default(false)
   name         String       @unique
   description  String       @default("")
+  projdesc     String       @default("")
+  projgoal     String       @default("")
+  projpers     String       @default("")
   image        String?
   url          String?
   source       String?
-  tags         Tag[]
-  technologies Technology[]
   role         String
   date         DateTime     @default(now())
+  tags         Tag[]        @relation("ProjectToTag")
+  technologies Technology[] @relation("ProjectToTechnology")
 }
 
 model Technology {
   id        Int       @id @default(autoincrement())
   name      String    @unique
   experties Int       @default(0)
-  project   Project[]
+  project   Project[] @relation("ProjectToTechnology")
 }
 
 model Tag {
   id      Int       @id @default(autoincrement())
   name    String    @unique
-  project Project[]
+  project Project[] @relation("ProjectToTag")
 }
