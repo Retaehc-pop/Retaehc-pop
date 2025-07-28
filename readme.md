@@ -8,9 +8,6 @@
   <a href="/">
     <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
   </a>
-  <a href="https://www.instagram.com/_popppop/">
-    <img src="https://img.shields.io/badge/Instagram-red?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Badge"/>
-  </a>
 </div>
 <div>
 <p align="center"><img src="https://komarev.com/ghpvc/?username=Retaehc-pop&style=flat-square&color=blue" alt=""/></p>
