@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Lekhapanyaporn",
     "Papop",
     "retaehc",
+    "papop lekhapanyaporn",
     "pop",
     "papop",
     "papop's website",
