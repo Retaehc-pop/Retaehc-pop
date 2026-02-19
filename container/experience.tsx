@@ -75,12 +75,20 @@ const Experience = () => {
       "Software Developer of High Altitude Balloon project",
       "Sorbital based fuel rocket research & development"]
   }
+  const gns = {
+    logo: "/experience/gns.jpg",
+    title: 'GNS-Systems',
+    title2: 'HPC System engineer',
+    from: '2026',
+    to: 'present',
+    description: []
+  }
   const rcp = {
     logo: "/experience/rcp.jpg",
     title: 'Redcare Pharmacy',
     title2: 'Working student',
     from: '2023',
-    to: 'Present',
+    to: '2026',
     description: [
       'Developed automation tools to monitor and report frequent updates from Gematik regarding E-prescription requirements and structure, while automating daily and monthly reminder for key events, keeping the team informed and reduce manual effort',
       'Created tools for data refactoring and bulk editing of E-prescriptions, including type conversion and field modification–streamlining test case generation and accelerating development process',
@@ -92,8 +100,8 @@ const Experience = () => {
     title: 'RWTH Aachen University',
     title2: 'B.SC Computer Science',
     from: '2022',
-    to: 'Present',
-    description: ['Expected Graduation 2025', 'Thesis : Evaluating Automated Memory Management Strategies for Heterogeneous Architectures using Microbenchmarking']
+    to: '2025',
+    description: ['Focus on High performance computing', 'Thesis : Evaluating Automated Memory Management Strategies for Heterogeneous Architectures using Microbenchmarking']
   }
   const assumption = {
     logo: "/experience/assumption.png",
@@ -107,6 +115,7 @@ const Experience = () => {
     <main className={styles.main}>
       <motion.div layout className={styles.wrapper}>
         <h2 className={comfortaa.className}>Work</h2>
+        <ExperienceCard {...gns} />
         <ExperienceCard {...rcp} />
       </motion.div>
       <motion.div layout className={styles.wrapper}>
