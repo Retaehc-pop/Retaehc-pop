@@ -81,7 +81,9 @@ const Experience = () => {
     title2: 'HPC System engineer',
     from: '2026',
     to: 'present',
-    description: []
+    description: [
+      'Part of the team migrating the legacy cluster management system to an Ansible-based solution'
+    ]
   }
   const rcp = {
     logo: "/experience/rcp.jpg",
@@ -90,9 +92,9 @@ const Experience = () => {
     from: '2023',
     to: '2026',
     description: [
-      'Developed automation tools to monitor and report frequent updates from Gematik regarding E-prescription requirements and structure, while automating daily and monthly reminder for key events, keeping the team informed and reduce manual effort',
-      'Created tools for data refactoring and bulk editing of E-prescriptions, including type conversion and field modification–streamlining test case generation and accelerating development process',
-      'Create a script to extract and process information from the E-Health card data from the terminal device, convert it to a dedicated format and pass along to the team to use in testing and validation workflows'
+      'Automated monitoring and reporting of Gematik E-prescription updates, with scheduled reminders to reduce manual tracking',
+      'Built tools for bulk refactoring of E-prescription data, speeding up test case generation and development',
+      'Scripted extraction and formatting of E-Health card data from terminal devices for use in testing workflows'
     ]
   }
   const rwth = {
