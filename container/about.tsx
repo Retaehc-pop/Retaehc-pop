@@ -34,12 +34,12 @@ const About = () => {
       <h1 className={comfortaa.className} >Papop Lekhapanyaporn</h1>
       <h2 className={comfortaa.className}>Software Developer</h2>
       <p className={styles.introduction}>
-        I'm a self taught developer who is currently studying in Computer science.
-        I have huge interest in High Performance Computing and Distributed system!
+        I'm a self taught developer with a B.Sc. in Computer Science.
+        I have a huge interest in High Performance Computing and Distributed Systems!
       </p>
       <p className={styles.introduction}>
-        I'm currently focusing on leaning new things in the computer science area in my university. Beside that,
-        I'm also interested in building some small projects and teach beginner about coding.
+        I recently graduated and am now working as an HPC System Engineer, where I'm part of a team migrating legacy cluster management to an Ansible-based solution.
+        I'm also interested in building small projects and helping beginners get into coding.
       </p>
       <p className={styles.introduction}>
         Coding is my passion and I love to learn new things!
