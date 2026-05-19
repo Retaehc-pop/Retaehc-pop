@@ -9,6 +9,8 @@ type Prototype = {
   text: string;
 };
 
+const AnimatedDiv = animated.div as React.ComponentType<{ children?: React.ReactNode; className?: string; style?: any }>;
+
 const JumpText: React.FC<Prototype> = (props) => {
   const { text } = props;
   const [sine, setSine] = useState(0);
@@ -28,7 +30,7 @@ const JumpText: React.FC<Prototype> = (props) => {
   });
 
   return (
-  <animated.div className={styles.jumpText} style={{transform}}>{text}</animated.div>
+  <AnimatedDiv className={styles.jumpText} style={{transform}}>{text}</AnimatedDiv>
   );
 };
 

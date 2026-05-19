@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { comfortaa } from "../../../lib/fonts";
 import styles from "./Page.module.scss";
 import Image from "next/image";
@@ -7,17 +7,17 @@ import { projectWithInfo } from "../../../lib/prisma";
 async function getProject(name: string) {
   const res = await fetch(`../api/project?name=${name}`);
   const data = await res.json();
-  console.log(data);
   return data;
 }
 
 
-export default function Page({ params }: { params: { name: string } }) {
+export default function Page({ params }: { params: Promise<{ name: string }> }) {
+  const { name } = use(params);
   const [project, setProject]: any = useState({});
 
   useEffect(() => {
-    getProject(params.name).then((data) => setProject(data));
-  }, []);
+    getProject(name).then((data) => setProject(data));
+  }, [name]);
 
 
   return (
@@ -35,7 +35,7 @@ export default function Page({ params }: { params: { name: string } }) {
       </div>
 
       <section className={styles.title}>
-        <h1>{params.name}</h1>
+        <h1>{name}</h1>
       </section>
       <section className={styles.info}>
         <div className={styles.projectDescription}>

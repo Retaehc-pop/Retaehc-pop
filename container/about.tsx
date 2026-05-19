@@ -3,7 +3,7 @@ import styles from "./About.module.scss";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Carousel from "../components/carousel";
-import { EmblaOptionsType } from "embla-carousel-react";
+import type { EmblaOptionsType } from "embla-carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";

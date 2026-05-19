@@ -8,11 +8,12 @@ export async function GET(request: Request) {
   const name = searchParams.get('name');
 
 
+  if (!id && !name) {
+    return new NextResponse('Bad Request', { status: 400 });
+  }
+
   const res = await prisma.project.findUnique({
-    where: {
-      ...(id && { id }),
-      ...(name && { name }),
-    },
+    where: id ? { id } : { name: name! },
   })
   if (!res) {
     return new NextResponse('Not Found', { status: 400 });

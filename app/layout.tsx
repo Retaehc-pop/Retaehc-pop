@@ -2,13 +2,19 @@ import React from "react";
 import ContactIcons from "../container/contactIcons";
 import "../styles/globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import type { Metadata } from "next";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { montserrat} from "../lib/fonts";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Logo from "../public/logo.svg";
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
   title: "Papop",
   generator: "Next.js",
@@ -27,7 +33,6 @@ export const metadata: Metadata = {
     "papop's portfolio",
   ],
   authors: [{ name: "Papop" }],
-  colorScheme: "light",
   creator: "Papop lekhapanyaporn",
   publisher: "Papop lekhapanyaporn",
   formatDetection: {

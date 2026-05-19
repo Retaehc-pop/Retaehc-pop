@@ -1,5 +1,5 @@
 import Carousel from "../components/carousel";
-import { EmblaOptionsType } from "embla-carousel-react";
+import type { EmblaOptionsType } from "embla-carousel";
 import { useState } from "react";
 import styles from "./Image.module.scss";
 import Image from "next/image";

@@ -37,7 +37,7 @@ import Rpi from "../public/svg/rpi.svg";
 import Anaconda from "../public/svg/anaconda.svg";
 import CMake from "../public/svg/cmake.svg";
 import Nvidia from "../public/svg/nvidia.svg";
-import { motion, useCycle } from 'framer-motion';
+import { motion, useCycle, type Variants } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { useRef } from 'react';
 import { faChevronUp,faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -48,9 +48,9 @@ interface SubstackProps {
     children: React.ReactNode;
   }
 const Skill:React.FC<SubstackProps> = ({name, children}) => {
-    const varients = {
+    const varients: Variants = {
         open: {
-            opacity: 1, 
+            opacity: 1,
             y: 0,
             scale: 1,
             transition: {
@@ -58,12 +58,12 @@ const Skill:React.FC<SubstackProps> = ({name, children}) => {
               }
         },
         closed: {
-            opacity: 0, 
+            opacity: 0,
             scale: 0,
             y: "-200%",
             transition: {
                 x: { stiffness: 1000}
-              } 
+              }
         }
     }
     
@@ -77,7 +77,7 @@ const Skill:React.FC<SubstackProps> = ({name, children}) => {
 
 const SubStack:React.FC<SubstackProps> = ({name, children}) => {
     
-    const varients = {
+    const varients: Variants = {
         open:{
             height: "min-content",
             margin: "1em 0em",
@@ -90,7 +90,7 @@ const SubStack:React.FC<SubstackProps> = ({name, children}) => {
             }
         },
         closed: {
-            height:0,
+            height: 0,
             margin: 0,
             scale: 0,
         }

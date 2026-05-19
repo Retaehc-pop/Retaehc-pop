@@ -14,7 +14,7 @@ import {
 import Hypertext from "../components/hypertext";
 import { comfortaa, roboto_mono } from "../lib/fonts";
 import ProjectBanner from "../components/projectBanner";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { useCycle, useInView } from "framer-motion";
 
@@ -45,7 +45,7 @@ const Projects = () => {
   const projectRef = useRef(null);
   const isInView = useInView(projectRef, { once: true });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     open: {
       transition: {
         delayChildren: 0.5,
@@ -60,7 +60,7 @@ const Projects = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     open: {
       opacity: 1,
       scale: 1,
